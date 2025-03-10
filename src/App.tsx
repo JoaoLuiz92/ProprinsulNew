@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import InitialPhoto from './public/img/aboutpicture.jpg';
 import Logo from './public/img/logo.png';
 import yaraa from './public/img/yaraa.png';
-import rgFert from './public/img/rgfert.png';
 import ccgl from './public/img/ccgl.png';
-import Sj from './public/img/sj.png';
-import PrefRg from './public/img/prefeiturariogrande.png';
-import PrefPel from './public/img/prefeiturapelotas.png';
+import bunge from './public/img/bunge.png';
+import josapar from './public/img/josapar.png';
+import lifemed from './public/img/lifemed.png';
+import unifertil from './public/img/unifertil.png';
 
 import {  
   Shield, 
@@ -93,9 +93,9 @@ function App() {
       style: { objectFit: 'contain', objectPosition: 'center' }
     },
     {
-      name: "Rio Grande Fertilizantes",
-      image: rgFert,
-      description: "Uma das maiores produtoras de fertilizantes do Brasil.",
+      name: "Bunge Alimentos",
+      image: bunge,
+      description: "Referência global no agronegócio e na produção de alimentos e ingredientes.",
       style: { objectFit: 'contain', objectPosition: 'center' }
     },
     {
@@ -105,21 +105,21 @@ function App() {
       style: { objectFit: 'contain', objectPosition: 'center' }
     },
     {
-      name: "Prefeitura de Pelotas",
-      image: PrefPel,
-      description: "Prefeitura do município de Pelotas, no Rio Grande do Sul.",
+      name: "Unifertil Fertilizantes",
+      image: unifertil,
+      description: "Especialista em nutrição de solo, fornecendo fertilizantes de alta performance.",
       style: { objectFit: 'contain', objectPosition: 'center' }
     },
     {
-      name: "Prefeitura de Rio Grande",
-      image: PrefRg,
-      description: "Prefeitura do município de Rio Grande, no Rio Grande do Sul.",
+      name: "Josapar",
+      image: josapar,
+      description: "Uma das maiores indústrias de alimentos do Brasil, líder em arroz e derivados.",
       style: { objectFit: 'contain', objectPosition: 'center' }
     },
     {
-      name: "Rede de farmácias São João",
-      image: Sj,
-      description: "Uma das maiores redes de farmácias do sul do Brasil.",
+      name: "Lifemed",
+      image: lifemed,
+      description: "Inovação em tecnologia médica, oferecendo soluções para a saúde e bem-estar.",
       style: { objectFit: 'contain', objectPosition: 'center' }
     }
   ];

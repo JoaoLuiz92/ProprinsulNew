@@ -7,6 +7,7 @@ import bunge from './public/img/bunge.png';
 import josapar from './public/img/josapar.png';
 import lifemed from './public/img/lifemed.png';
 import unifertil from './public/img/unifertil.png';
+import proprinsulHome from './public/img/proprinsulHome.png';
 
 import {  
   Shield, 
@@ -236,22 +237,23 @@ function App() {
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
           </div>
           <div className="relative container mx-auto px-4 h-full flex items-center">
-            <div className="text-white max-w-2xl">
+            <div className="text-white max-w-2xl mx-auto text-center">
+              <img src={proprinsulHome} className='w-full h-64 p-4 flex items-center justify-center rounded-lg mb-4 mx-auto object-contain'/>
               <h1 className="text-5xl font-bold mb-4">
-                Proteção e Segurança para seu Negócio
+              Proteção e Segurança para seu Negócio
               </h1>
               <p className="text-xl mb-8">
               Sejam bem vindos à Proprinsul Extintores, referência no sul do
               Rio Grande do Sul nas áreas de prevenção e combate a incêndios.
               </p>
-                <a
-                href="https://wa.me/555332255270"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold transition duration-300"
-                >
-                Fale Conosco
-                </a>
+              <a
+              href="https://wa.me/555332255270"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold transition duration-300"
+              >
+              Fale Conosco
+              </a>
             </div>
           </div>
         </div>

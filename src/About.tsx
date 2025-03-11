@@ -1,5 +1,4 @@
 import React from 'react';
-import { Flame } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Tatiana from './public/img/TatianaFoto.jpg';
 import Simone from './public/img/Simone.jpeg';
@@ -60,7 +59,7 @@ function About() {
         <h2 className="text-4xl font-bold mb-12 text-white text-center">Nossa Liderança</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {team.map((member, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-xl overflow-hidden">
+            <div key={index} className="bg-white rounded-lg shadow-xl overflow-hidden transform transition duration-300 hover:scale-105">
               <img
                 src={member.image}
                 alt={member.name}

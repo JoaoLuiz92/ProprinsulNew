@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 import InitialPhoto from './public/img/aboutpicture.jpg';
 import Logo from './public/img/logo.png';
 import yaraa from './public/img/yaraa.png';
@@ -23,9 +24,66 @@ import {
 } from 'lucide-react';
 import { Link, useHref } from 'react-router-dom';
 
+function ContactForm() {
+  const [state, handleSubmit] = useForm("mblgjkjd");
+  if (state.succeeded) {
+    return <p className="text-green-600">Mensagem enviada com sucesso!</p>;
+  }
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div>
+        <label htmlFor="name" className="block text-gray-700 mb-2">Nome</label>
+        <input
+          id="name"
+          type="text"
+          name="name"
+          className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
+        />
+      </div>
+      <div>
+        <label htmlFor="email" className="block text-gray-700 mb-2">Email</label>
+        <input
+          id="email"
+          type="email"
+          name="email"
+          className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
+        />
+        <ValidationError 
+          prefix="Email" 
+          field="email"
+          errors={state.errors}
+        />
+      </div>
+      <div>
+        <label htmlFor="message" className="block text-gray-700 mb-2">Mensagem</label>
+        <textarea
+          id="message"
+          name="message"
+          className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
+          rows={4}
+        ></textarea>
+        <ValidationError 
+          prefix="Message" 
+          field="message"
+          errors={state.errors}
+        />
+      </div>
+      <button
+        type="submit"
+        disabled={state.submitting}
+        className="w-full bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition duration-300"
+      >
+        Enviar Mensagem
+      </button>
+    </form>
+  );
+}
+
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+
+  
 
   const Serviços = [
     {
@@ -265,8 +323,8 @@ function App() {
           <h2 className="text-4xl font-bold text-center mb-12 text-white">Nossos Serviços</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {Serviços.map((service, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-lg">
-                <service.icon className="h-12 w-12 text-red-600 mb-4" />
+              <div key={index} className="bg-white p-6 rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                <service.icon className="h-12 w-12 text-red-600 mb-4 " />
                 <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
                 <p className="text-gray-600">{service.description}</p>
               </div>
@@ -281,7 +339,7 @@ function App() {
           <h2 className="text-4xl font-bold text-center mb-12 text-white">Nossos Planos</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {planos.map((plan, index) => (
-              <div key={index} className="bg-white p-8 rounded-lg shadow-lg">
+              <div key={index} className="bg-white p-8 rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
                 <h3 className="text-2xl font-bold mb-4">{plan.name}</h3>
                 <div className="text-3xl font-bold text-red-600 mb-6">{plan.price}</div>
                 <ul className="space-y-3">
@@ -335,7 +393,7 @@ function App() {
       </section>
       
           {/* Contact Section */}
-      <section id="Contato" className="py-20">
+          <section id="Contato" className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12 text-white">Entre em Contato</h2>
           <div className="grid md:grid-cols-2 gap-12">
@@ -347,8 +405,10 @@ function App() {
                   <span>contato@proprinsul.com.br</span>
                 </div>
                 <div className="flex items-center">
+                  <a href="https://www.google.com/maps/search/?api=1&query=Rua+Marcelo+Gama,+90+-+Pelotas,+RS" target="_blank" rel="noopener noreferrer" className="flex items-center">
                   <MapPin className="h-6 w-6 text-red-600 mr-3" />
                   <span>Rua Marcelo Gama, 90 - Pelotas, RS</span>
+                  </a>
                 </div>
                 <div className="flex items-center">
                   <a href="https://wa.me/555332255270" className="flex items-center" target="_blank" rel="noopener noreferrer">
@@ -357,8 +417,10 @@ function App() {
                   </a>
                 </div>
                 <div className="flex items-center">
+                  <a href="https://www.google.com/maps/place/R.+Domingos+de+Almeida,+286+-+Cidade+Nova,+Rio+Grande+-+RS" target="_blank" rel="noopener noreferrer" className="flex items-center">
                   <MapPin className="h-6 w-6 text-red-600 mr-3" />
                   <span>Rua Domingos de Almeida, 286 - Rio Grande, RS</span>
+                  </a>
                 </div>
                 <div className="flex items-center">
                   <a href="https://wa.me/5553991955119" className="flex items-center" target="_blank" rel="noopener noreferrer">
@@ -369,40 +431,12 @@ function App() {
               </div>
             </div>
             <div className="bg-white p-8 rounded-lg">
-              <form className="space-y-4">
-                <div>
-                  <label className="block text-gray-700 mb-2">Nome</label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
-                  />
-                </div>
-                <div>
-                  <label className="block text-gray-700 mb-2">Email</label>
-                  <input
-                    type="email"
-                    className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
-                  />
-                </div>
-                <div>
-                  <label className="block text-gray-700 mb-2">Mensagem</label>
-                  <textarea
-                    className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
-                    rows={4}
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition duration-300"
-                >
-                  Enviar Mensagem
-                </button>
-              </form>
+              <ContactForm />
             </div>
           </div>
         </div>
       </section>
-
+      
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-8">
         <div className="container mx-auto px-4">

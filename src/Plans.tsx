@@ -1,7 +1,6 @@
 import React from 'react';
+import tabelaCorp from './public/img/tabelaCorp.png';
 import { 
-  Flame, 
-  CheckCircle2, 
   Menu, 
   X,
   Shield,
@@ -164,6 +163,9 @@ function Plans() {
           <p className="text-xl text-white/90">
             Soluções personalizadas para garantir a segurança do seu negócio
           </p>
+           <div className="flex justify-center mt-8 mb-8 ">
+            <img src={tabelaCorp} className='rounded-lg w-full max-w-5xl transform transition duration-300 hover:scale-105' />
+          </div>
         </div>
 
         {/* Plans Grid */}
@@ -205,7 +207,7 @@ function Plans() {
             Entre em contato conosco para desenvolvermos uma solução sob medida para sua empresa
           </p>
           <Link
-            to="/#contact"
+            to="https://wa.me/555332255270"
             className="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold transition duration-300"
           >
             Fale Conosco

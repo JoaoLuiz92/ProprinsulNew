@@ -27,7 +27,7 @@ import { Link, useHref } from 'react-router-dom';
 function ContactForm() {
   const [state, handleSubmit] = useForm("mblgjkjd");
   if (state.succeeded) {
-    return <p className="text-green-600">Mensagem enviada com sucesso!</p>;
+    return <p className=" text-center  md:text-center pt-24 text-center font-bold font-aller text-red-700">Mensagem enviada com sucesso. Proprinsul © </p>;
   }
   return (
     <form onSubmit={handleSubmit} className="space-y-4">

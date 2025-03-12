@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Aller';
+    src: url('/fonts/Aller-Regular.woff2') format('woff2'),
+         url('/fonts/Aller-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Aller';
+    src: url('/fonts/Aller-Bold.woff2') format('woff2'),
+         url('/fonts/Aller-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+  }

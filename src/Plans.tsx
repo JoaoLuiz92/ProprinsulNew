@@ -122,17 +122,17 @@ function Plans() {
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center">
             <img src={Logo} className="h-8 w-8 text-red-600" />
-            <span className="ml-2 text-xl font-bold text-gray-800">Proprinsul</span>
+            <span className="ml-2 text-xl font-bold text-gray-800 font-aller">Proprinsul</span>
           </Link>
           <Link to="/" className="hidden md:block text-gray-600 hover:text-red-600">
-            <span className="ml-2 text-xl font-bold text-gray-800">Voltar</span>
+            <span className="ml-2 text-xl font-bold text-gray-800 font-aller">Voltar</span>
           </Link>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-600 hover:text-red-600"
+              className="text-gray-600 font-aller hover:text-red-600"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -145,9 +145,9 @@ function Plans() {
             <div className="px-2 py-3">
               <Link
                 to="/"
-                className="block px-3 py-2 text-gray-600 hover:text-red-600"
+                className="block px-3 py-2 text-gray-600 font-aller hover:text-red-600"
               >
-                Voltar para Home
+                Voltar
               </Link>
             </div>
           </div>
@@ -157,10 +157,10 @@ function Plans() {
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-20">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold font-aller text-white mb-4">
             Escolha o Plano Ideal para Sua Empresa
           </h1>
-          <p className="text-xl text-white/90">
+          <p className="text-xl font-aller text-white/90">
             Soluções personalizadas para garantir a segurança do seu negócio
           </p>
            <div className="flex justify-center mt-8 mb-8 ">
@@ -169,7 +169,7 @@ function Plans() {
         </div>
 
         {/* Plans Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-3 font-aller gap-8 mb-12">
   {plans.map((plan, index) => (
     <div
       key={index}
@@ -183,15 +183,15 @@ function Plans() {
           Contratar Agora
         </button>
       </div>
-      <div className="bg-gray-50 p-8">
+      <div className="bg-gray-50 p-8 ">
         <h4 className="font-semibold mb-4">O que está incluído:</h4>
         <div className="space-y-4">
           {plan.features.map((feature, idx) => (
             <div key={idx} className="flex items-start">
               <feature.icon className="h-6 w-6 text-red-600 mr-3 flex-shrink-0" />
-              <div>
-                <h5 className="font-semibold">{feature.title}</h5>
-                <p className="text-sm text-gray-600">{feature.description}</p>
+              <div >
+                <h5 className="font-semibold font-aller">{feature.title}</h5>
+                <p className="text-sm text-gray-600 font-aller">{feature.description}</p>
               </div>
             </div>
           ))}
@@ -201,7 +201,7 @@ function Plans() {
   ))}
 </div>
         {/* CTA Section */}
-        <div className="bg-white rounded-lg shadow-xl p-8 text-center">
+        <div className="bg-white rounded-lg shadow-xl p-8 text-center font-aller">
           <h2 className="text-3xl font-bold mb-4">Precisa de um Plano Personalizado?</h2>
           <p className="text-gray-600 mb-6">
             Entre em contato conosco para desenvolvermos uma solução sob medida para sua empresa
@@ -221,9 +221,9 @@ function Plans() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center mb-4 md:mb-0">
               <img src={Logo} className="h-8 w-8 text-red-600" />
-              <span className="ml-2 text-xl font-bold">Proprinsul</span>
+              <span className="ml-2 text-xl font-bold font-aller">Proprinsul</span>
             </div>
-            <div className="text-center md:text-right">
+            <div className="text-center md:text-right font-aller">
               <p>&copy; 2024 Proprinsul Prevenção de Incêndios. Todos os direitos reservados.</p>
             </div>
           </div>

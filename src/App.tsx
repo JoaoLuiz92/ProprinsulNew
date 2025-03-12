@@ -194,16 +194,16 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-red-500/90 via-red-700/80 to-navy-900/90">
       {/* Navigation */}
-      <nav className="fixed w-full bg-white shadow-md z-50">
+      <nav className="fixed w-full font-aller bg-white shadow-md z-50">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <img src={Logo} className="h-8 w-8 text-red-600" />
-              <span className="ml-2 text-xl font-bold text-gray-800">Proprinsul</span>
+              <span className="ml-2 text-xl font-bold  text-gray-800">Proprinsul</span>
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-8">
+            <div className="hidden md:flex  space-x-8">
               <button
                 onClick={() => scrollToSection('Inicio')}
                 className={`text-gray-600 hover:text-red-600 capitalize ${
@@ -241,7 +241,7 @@ function App() {
             <div className="md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-600 hover:text-red-600"
+                className="text-gray-600 hover:text-red-600 font-aller"
               >
                 {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
@@ -265,7 +265,7 @@ function App() {
               </Link>
               <Link
                 to="/plans"
-                className="text-gray-600 hover:text-red-600 capitalize">
+                className="block w-full text-left px-3 py-2 text-gray-600 hover:text-red-600 capitalize">
                 Planos
               </Link>
               {['Serviços', 'Parceiros', 'Contato'].map((item) => (
@@ -297,10 +297,10 @@ function App() {
           <div className="relative container mx-auto px-4 h-full flex items-center">
             <div className="text-white max-w-2xl mx-auto text-center">
               <img src={proprinsulHome} className='w-full h-64 p-4 flex items-center justify-center rounded-lg mb-4 mx-auto object-contain'/>
-              <h1 className="text-5xl font-bold mb-4">
+              <h1 className="text-5xl font-bold font-aller mb-4">
               Proteção e Segurança para seu Negócio
               </h1>
-              <p className="text-xl mb-8">
+              <p className="text-xl  font-aller mb-8">
               Sejam bem vindos à Proprinsul Extintores, referência no sul do
               Rio Grande do Sul nas áreas de prevenção e combate a incêndios.
               </p>
@@ -308,7 +308,7 @@ function App() {
               href="https://wa.me/555332255270"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold transition duration-300"
+              className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold font-aller transition duration-300"
               >
               Fale Conosco
               </a>
@@ -320,13 +320,13 @@ function App() {
       {/* Services Section */}
       <section id="Serviços" className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 text-white">Nossos Serviços</h2>
+          <h2 className="text-4xl font-bold text-center font-aller mb-12 text-white">Nossos Serviços</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {Serviços.map((service, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
                 <service.icon className="h-12 w-12 text-red-600 mb-4 " />
-                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
+                <h3 className="text-xl font-semibold font-aller mb-2">{service.title}</h3>
+                <p className="text-gray-600 font-aller">{service.description}</p>
               </div>
             ))}
           </div>
@@ -336,21 +336,21 @@ function App() {
       {/* Plans Section */}
       <section id="Planos" className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 text-white">Nossos Planos</h2>
+          <h2 className="text-4xl font-bold text-center mb-12 font-aller text-white">Nossos Planos</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {planos.map((plan, index) => (
               <div key={index} className="bg-white p-8 rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
-                <h3 className="text-2xl font-bold mb-4">{plan.name}</h3>
-                <div className="text-3xl font-bold text-red-600 mb-6">{plan.price}</div>
+                <h3 className="text-2xl font-aller font-bold mb-4">{plan.name}</h3>
+                <div className="text-3xl font-aller font-bold text-red-600 mb-6">{plan.price}</div>
                 <ul className="space-y-3">
                   {plan.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center">
+                    <li key={idx} className="flex items-center font-aller text-gray-600">
                       <CheckCircle2 className="h-5 w-5 text-green-500 mr-2" />
                       <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
-                <button className="w-full mt-8 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition duration-300">
+                <button className="w-full mt-8 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-aller font-semibold transition duration-300">
                   Contratar
                 </button>
               </div>
@@ -362,7 +362,7 @@ function App() {
       {/* Partners Section */}
       <section id="Parceiros" className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 text-white">
+          <h2 className="text-4xl font-bold font-aller text-center mb-12 text-white">
         Nossos Parceiros
         <span className="block mt-2 h-1 w-20 bg-blue-500 mx-auto"></span>
           </h2>
@@ -380,10 +380,10 @@ function App() {
             style={partner.style as React.CSSProperties}
           />
             </div>
-            <h3 className="text-xl font-bold text-center text-gray-800 mb-2">
+            <h3 className="text-xl font-bold font-aller text-center text-gray-800 mb-2">
           {partner.name}
             </h3>
-            <p className="text-gray-600 text-center text-base leading-relaxed">
+            <p className="text-gray-600 text-center font-aller text-base leading-relaxed">
           {partner.description}
             </p>
           </div>
@@ -395,42 +395,42 @@ function App() {
           {/* Contact Section */}
           <section id="Contato" className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 text-white">Entre em Contato</h2>
+          <h2 className="text-4xl font-bold text-center font-aller mb-12 text-white">Entre em Contato</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div className="bg-white p-8 rounded-lg">
-              <h3 className="text-2xl font-semibold mb-6">Informações de Contato</h3>
+              <h3 className="text-2xl font-semibold font-aller mb-6">Informações de Contato</h3>
               <div className="space-y-4">
                 <div className="flex items-center">
-                  <Mail className="h-6 w-6 text-red-600 mr-3" />
-                  <span>contato@proprinsul.com.br</span>
+                  <Mail className="h-6 w-6 text-red-600 font-aller mr-3" />
+                  <span className='font-aller'>contato@proprinsul.com.br</span>
                 </div>
                 <div className="flex items-center">
                   <a href="https://www.google.com/maps/search/?api=1&query=Rua+Marcelo+Gama,+90+-+Pelotas,+RS" target="_blank" rel="noopener noreferrer" className="flex items-center">
                   <MapPin className="h-6 w-6 text-red-600 mr-3" />
-                  <span>Rua Marcelo Gama, 90 - Pelotas, RS</span>
+                  <span className='font-aller'>Rua Marcelo Gama, 90 - Pelotas, RS</span>
                   </a>
                 </div>
                 <div className="flex items-center">
                   <a href="https://wa.me/555332255270" className="flex items-center" target="_blank" rel="noopener noreferrer">
                   <Phone className="h-6 w-6 text-red-600 mr-3" />
-                  <span>(53) 3225-5270</span>
+                  <span className='font-aller'>(53) 3225-5270</span>
                   </a>
                 </div>
                 <div className="flex items-center">
                   <a href="https://www.google.com/maps/place/R.+Domingos+de+Almeida,+286+-+Cidade+Nova,+Rio+Grande+-+RS" target="_blank" rel="noopener noreferrer" className="flex items-center">
                   <MapPin className="h-6 w-6 text-red-600 mr-3" />
-                  <span>Rua Domingos de Almeida, 286 - Rio Grande, RS</span>
+                  <span className='font-aller'>Rua Domingos de Almeida, 286 - Rio Grande, RS</span>
                   </a>
                 </div>
                 <div className="flex items-center">
                   <a href="https://wa.me/5553991955119" className="flex items-center" target="_blank" rel="noopener noreferrer">
                   <Phone className="h-6 w-6 text-red-600 mr-3" />
                   </a>
-                  <span>(53) 99195-5119</span>
+                  <span className='font-aller'>(53) 99195-5119</span>
                 </div>
               </div>
             </div>
-            <div className="bg-white p-8 rounded-lg">
+            <div className="bg-white p-8 font-aller rounded-lg">
               <ContactForm />
             </div>
           </div>
@@ -443,9 +443,9 @@ function App() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center mb-4 md:mb-0">
               <img src={Logo} className="h-8 w-8 text-red-600" />
-              <span className="ml-2 text-xl font-bold">Proprinsul</span>
+              <span className="ml-2 text-xl font-bold font-aller">Proprinsul</span>
             </div>
-            <div className="text-center md:text-right">
+            <div className="text-center md:text-right font-aller">
               <p>&copy; 2024 Proprinsul Prevenção de Incêndios. Todos os direitos reservados.</p>
             </div>
           </div>

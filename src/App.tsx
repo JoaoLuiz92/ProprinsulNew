@@ -204,14 +204,14 @@ function App() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex  space-x-8">
-              <button
-                onClick={() => scrollToSection('Inicio')}
+                <button
+                onClick={() => scrollToSection('home')}
                 className={`text-gray-600 hover:text-red-600 capitalize ${
-                activeSection === 'Inicio' ? 'text-red-600' : ''
+                activeSection === 'home' ? 'text-gray-600' : ''
                 }`}
-              >
+                >
                 Inicio
-              </button>
+                </button>
               <Link
                 to="/about"
                 className="text-gray-600 hover:text-red-600 capitalize"

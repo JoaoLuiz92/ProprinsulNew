@@ -27,6 +27,7 @@ function About() {
 
   return (
         <div className="min-h-screen bg-[rgb(165,25,28)] font-aller">
+          
         <nav className="fixed w-full bg-blue-950 bg-opacity-100 z-50 shadow-md backdrop-blur-none">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center">
@@ -44,6 +45,38 @@ function About() {
       </nav>
 
       <div className="container mx-auto px-4 py-20">
+      <div className="relative py-16">
+  <h2 className="text-3xl font-bold font-aller text-center text-white mb-12">
+    Nossa Linha do Tempo
+  </h2>
+  <div className="relative flex justify-center">
+    <div className="w-full max-w-5xl h-1 bg-white relative">
+      {/* Eventos */}
+      <div className="absolute top-1/2 left-[0%] transform -translate-y-1/2 group flex flex-col items-center">
+        <div className="w-5 h-5 bg-white rounded-full border-2 border-red-600 group-hover:scale-125 transition-transform"></div>
+        <span className="mt-2 text-white font-bold">1976</span>
+        <div className="absolute bottom-8 bg-white text-gray-800 text-sm rounded-lg shadow-lg p-2 w-52 opacity-0 group-hover:opacity-100 transition-opacity z-50">
+          Fundação da Proprinsul, com foco em prevenção de incêndios.
+        </div>
+      </div>
+      <div className="absolute top-1/2 left-[50%] transform -translate-x-1/2 -translate-y-1/2 group flex flex-col items-center">
+        <div className="w-5 h-5 bg-white rounded-full border-2 border-red-600 group-hover:scale-125 transition-transform"></div>
+        <span className="mt-2 text-white font-bold">2011</span>
+        <div className="absolute bottom-8 bg-white text-gray-800 text-sm rounded-lg shadow-lg p-2 w-52 opacity-0 group-hover:opacity-100 transition-opacity z-50">
+          Nova gestão familiar assume com 1 carro e 3 funcionários.
+        </div>
+      </div>
+      <div className="absolute top-1/2 left-[100%] transform -translate-x-full -translate-y-1/2 group flex flex-col items-center">
+        <div className="w-5 h-5 bg-white rounded-full border-2 border-red-600 group-hover:scale-125 transition-transform"></div>
+        <span className="mt-2 text-white font-bold">Hoje</span>
+        <div className="absolute bottom-8 bg-white text-gray-800 text-sm rounded-lg shadow-lg p-2 w-52 opacity-0 group-hover:opacity-100 transition-opacity z-50">
+          +40 colaboradores, 10 veículos, 3 endereços.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
       <div className="bg-white rounded-lg shadow-xl mt-6 p-8 mb-12">
   <h1 className="text-4xl font-aller text-center font-bold mb-8 text-gray-800">Uma história de solidez e crescimento</h1>
       <p className="text-lg font-aller text-gray-600 mb-6">
@@ -86,6 +119,8 @@ function About() {
             </div>
             <div className="text-center font-aller md:text-right">
               <p>&copy; 2024 Proprinsul Prevenção de Incêndios. Todos os direitos reservados.</p>
+              <p className="text-sm text-gray-400 mt-2">Desenvolvido por Core.IA Technologies</p>
+
             </div>
           </div>
         </div>

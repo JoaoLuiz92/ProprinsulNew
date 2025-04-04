@@ -241,7 +241,6 @@ function App() {
   ];
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
-    const offset = 80; // Ajuste o valor conforme necessário
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
       setActiveSection(sectionId);
@@ -527,6 +526,7 @@ function App() {
         </div>
         <div className="text-center md:text-right font-aller">
           <p>&copy; 2024 Proprinsul Prevenção de Incêndios. Todos os direitos reservados.</p>
+          <p className="text-sm text-gray-400 mt-2">Desenvolvido por Core.IA Technologies</p>
         </div>
       </div>
     </div>

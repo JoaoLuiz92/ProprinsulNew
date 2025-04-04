@@ -241,6 +241,7 @@ function App() {
   ];
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
+    const offset = 80; // Ajuste o valor conforme necessário
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
       setActiveSection(sectionId);
@@ -322,7 +323,7 @@ function App() {
             >
               Planos
             </Link>
-            {['Serviços', 'clientes', 'Contato'].map((item) => (
+            {['Serviços', 'Clientes', 'Contato'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}

@@ -14,7 +14,7 @@ import heroteste2 from './public/img/aboutpicture.jpg';
 import heroteste3 from './public/img/bgservices.jpeg';
 import heroteste4 from './public/img/bkg.jpg';
 import navbarlogo from './public/img/navbarlogo.png';
-import tanac from './public/img/tanac.jpg';
+import tanac from './public/img/tanac.png';
 import bianchi from './public/img/bianchi.png';
 import saobento from './public/img/saobento.png';
 

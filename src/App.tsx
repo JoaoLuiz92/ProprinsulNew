@@ -192,7 +192,7 @@ function App() {
     }
   ];
 
-  const Parceiros = [
+  const Clientes = [
     {
       name: "Yara do Brasil",
       image: yaraa,
@@ -446,7 +446,7 @@ function App() {
       Nossos Parceiros
     </h2>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {Parceiros.map((partner, index) => (
+      {Clientes.map((partner, index) => (
         <div
           key={index}
           className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"

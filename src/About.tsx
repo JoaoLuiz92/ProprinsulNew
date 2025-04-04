@@ -2,64 +2,64 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Tatiana from './public/img/TatianaFoto.jpg';
 import Simone from './public/img/Simone.jpeg';
-import Roni from './public/img/Roni.jpeg';
-import Logo from './public/img/logo.png';
+import Roni from './public/img/Roni.png';
+import navbarlogo from './public/img/navbarlogo.png';
 
 function About() {
   const team = [
-    {
-      name: "Tatiana Fiss Garcez",
-      role: "CEO",
-      image: Tatiana,
-      description: "Com mais de 15 anos de experiência no setor de prevenção de incêndios, Tatiana lidera a Proprinsul com visão inovadora e compromisso com a excelência. Sua dedicação à segurança e proteção estabeleceu a empresa como referência no sul do Brasil."
-    },
+
     {
       name: "Simone Fiss Garcez",
-      role: "Diretora",
+      role: "CFO",
       image: Simone,
-      description: "Responsável pela gestão operacional, Simone traz sua expertise em gestão de projetos e relacionamento com clientes. Sua abordagem hands-on e foco em resultados têm sido fundamentais para o crescimento sustentável da empresa."
+    },
+    {
+      name: "Tatiana Fiss Garcez",
+      role: "CEO, Engenheira Mecânica e de Segurança do Trabalho",
+      image: Tatiana,
     },
     {
       name: "Roni Garcez",
-      role: "Diretor",
+      role: "Sócio",
       image: Roni,
-      description: "Com vasta experiência técnica, Roni supervisiona todos os aspectos técnicos e operacionais da Proprinsul. Sua dedicação à inovação e qualidade garante que nossos serviços sempre excedam as expectativas dos clientes."
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-600 via-red-800 to-navy-900">
-      <nav className="bg-white shadow-md">
+        <div className="min-h-screen bg-[rgb(165,25,28)] font-aller">
+        <nav className="fixed w-full bg-blue-950 bg-opacity-100 z-50 shadow-md backdrop-blur-none">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center">
-            <img src={Logo} className="h-8 w-8 text-red-600" />
-            <span className="ml-2 text-xl font-bold font-aller text-gray-800">Proprinsul</span>
+              <img 
+            src={navbarlogo} 
+            alt="Logo Proprinsul" 
+            className="h-24 w-auto object-contain px-2"
+          />       
           </Link>
 
            <Link to="/" className="hidden md:block text-gray-600 hover:text-red-600">
-            <span className="ml-2 text-xl font-bold font-aller text-gray-800">Voltar</span>
+            <span className="text-white hover:text-red-600 capitalize font-allere">Voltar</span>
           </Link>
         </div>
       </nav>
 
       <div className="container mx-auto px-4 py-20">
-        <div className="bg-white rounded-lg shadow-xl p-8 mb-12">
-          <h1 className="text-4xl font-aller font-bold  mb-8 text-gray-800">Nossa História</h1>
-          <p className="text-lg font-aller text-gray-600 mb-6">
-            Fundada em 2010, a Proprinsul nasceu da visão de criar uma empresa que não apenas oferecesse serviços de prevenção de incêndios, mas que se tornasse uma parceira verdadeira na proteção do patrimônio e da vida de nossos clientes.
-          </p>
-          <p className="text-lg font-aller text-gray-600 mb-6">
-            Ao longo dos anos, construímos uma reputação sólida baseada em competência técnica, atendimento personalizado e compromisso com a excelência. Nossa equipe altamente qualificada e dedicada trabalha incansavelmente para garantir as melhores soluções em prevenção e combate a incêndios.
-          </p>
-          <p className="text-lg font-aller text-gray-600">
-            Hoje, somos reconhecidos como referência no setor, atendendo empresas de diversos segmentos em todo o sul do Brasil, sempre com o mesmo compromisso com a qualidade e segurança que nos trouxe até aqui.
-          </p>
-        </div>
+      <div className="bg-white rounded-lg shadow-xl mt-6 p-8 mb-12">
+  <h1 className="text-4xl font-aller text-center font-bold mb-8 text-gray-800">Uma história de solidez e crescimento</h1>
+      <p className="text-lg font-aller text-gray-600 mb-6">
+        A Proprinsul existe desde 1976, e desde 2011 está sob nova gestão familiar. 
+        Quando assumimos, tínhamos apenas 1 carro e 3 funcionários.
+         Hoje, somos mais de 40 colaboradores, contamos com uma frota de 10 veículos e
+          3 endereços. Seguimos crescendo com a mesma essência:
+          entregar prevenção de verdade, com responsabilidade,
+           experiência e compromisso com o cliente.
+      </p>
+    </div>
 
         <h2 className="text-4xl font-bold font-aller mb-12 text-white text-center">Nossa Liderança</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {team.map((member, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-xl overflow-hidden transform transition duration-300 hover:scale-105">
+            <div key={index} className="bg-white rounded-lg shadow-xl overflow-hidden z-10  duration-300 hover:scale-105">
               <img
                 src={member.image}
                 alt={member.name}
@@ -68,19 +68,21 @@ function About() {
               <div className="p-6">
                 <h3 className="text-2xl font-bold font-aller text-gray-800 mb-2">{member.name}</h3>
                 <p className="text-red-600 font-semibold font-aller mb-4">{member.role}</p>
-                <p className="text-gray-600 font-aller">{member.description}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      <footer className="bg-gray-800 text-white py-8 mt-20">
+      <footer className="bg-blue-950 text-white py-2 mt-20  border-gray-70">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center mb-4 md:mb-0">
-              <img src={Logo} className="h-8 w-8 text-red-600" />
-              <span className="ml-2 text-xl font-bold font-aller">Proprinsul</span>
+            <img 
+            src={navbarlogo} 
+            alt="Logo Proprinsul" 
+            className="h-24 w-auto object-contain px-2"
+          />       
             </div>
             <div className="text-center font-aller md:text-right">
               <p>&copy; 2024 Proprinsul Prevenção de Incêndios. Todos os direitos reservados.</p>

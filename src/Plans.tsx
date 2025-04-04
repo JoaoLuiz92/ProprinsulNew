@@ -1,5 +1,7 @@
 import React from 'react';
-import tabelaCorp from './public/img/tabelaCorp.png';
+import empresario from './public/img/empresarioteste.png';
+import navbarlogo from './public/img/navbarlogo.png';
+
 import { 
   Menu, 
   X,
@@ -15,35 +17,10 @@ import Logo from './public/img/logo.png';
 
 function Plans() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [showPopup, setShowPopup] = React.useState(false);
 
   const plans = [
-    {
-      name: "Plano Essencial",
-      price: "R$ 499/mês",
-      description: "Ideal para pequenas empresas que buscam conformidade básica com as normas de segurança",
-      features: [
-        {
-          icon: Shield,
-          title: "Inspeção mensal",
-          description: "Verificação completa dos equipamentos de segurança"
-        },
-        {
-          icon: Clock,
-          title: "Manutenção preventiva",
-          description: "Manutenção regular para prevenir falhas"
-        },
-        {
-          icon: Headphones,
-          title: "Suporte 8x5",
-          description: "Suporte técnico em horário comercial"
-        },
-        {
-          icon: FileText,
-          title: "Relatórios básicos",
-          description: "Documentação essencial de conformidade"
-        }
-      ]
-    },
+
     {
       name: "Plano Gestão Preventiva",
       price: "R$ 899/mês",
@@ -118,14 +95,17 @@ function Plans() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-red-600 via-red-800 to-navy-900">
       {/* Navigation */}
-      <nav className="bg-white shadow-md">
+      <nav className="fixed w-full bg-blue-950 bg-opacity-100 z-50 shadow-md backdrop-blur-none">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center">
-            <img src={Logo} className="h-8 w-8 text-red-600" />
-            <span className="ml-2 text-xl font-bold text-gray-800 font-aller">Proprinsul</span>
+          <img 
+        src={navbarlogo} 
+        alt="Logo Proprinsul" 
+        className="h-24 w-auto object-contain px-2"
+      />
           </Link>
           <Link to="/" className="hidden md:block text-gray-600 hover:text-red-600">
-            <span className="ml-2 text-xl font-bold text-gray-800 font-aller">Voltar</span>
+            <span className="text-white hover:text-red-600 capitalize font-aller">Voltar</span>
           </Link>
 
           {/* Mobile menu button */}
@@ -154,52 +134,119 @@ function Plans() {
         )}
       </nav>
 
-      {/* Hero Section */}
-      <div className="container mx-auto px-4 py-20">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold font-aller text-white mb-4">
-            Escolha o Plano Ideal para Sua Empresa
-          </h1>
-          <p className="text-xl font-aller text-white/90">
-            Soluções personalizadas para garantir a segurança do seu negócio
-          </p>
-           <div className="flex justify-center mt-8 mb-8 ">
-            <img src={tabelaCorp} className='rounded-lg w-full max-w-5xl transform transition duration-300 hover:scale-105' />
+        {/* Hero Section */}
+        <div className="container mx-auto px-4 py-12">
+          <div className="text-center mb-10">
+            {/* Frase Principal */}
+            <h1 className="text-4xl md:text-5xl font-bold font-aller text-white mb-4">
+              Sua empresa está pronta para enfrentar uma fiscalização ou emergência sem medo?
+            </h1>
+            {/* Subtexto */}
+            <p className="text-lg md:text-xl font-aller text-white/90 mb-6">
+              Mais do que alvarás e documentos, nós entregamos segurança, tranquilidade e economia para o seu negócio.
+            </p>
+            {/* Botões de CTA */}
+            <div className="flex flex-col md:flex-row justify-center items-center gap-4">
+              <a
+                href="#regularizar"
+                className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold font-aller transition duration-300"
+              >
+                Quero Regularizar Minha Empresa
+              </a>
+              <a
+                href="https://wa.me/555332255270"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-100 hover:bg-gray-200 text-red-600 px-6 py-3 rounded-lg font-semibold font-aller transition duration-300"
+              >
+                Falar com um Especialista no WhatsApp
+              </a>
+            </div>
           </div>
         </div>
-
-        {/* Plans Grid */}
-        <div className="grid md:grid-cols-3 font-aller gap-8 mb-12">
-  {plans.map((plan, index) => (
-    <div
-      key={index}
-      className="bg-white rounded-lg shadow-xl overflow-hidden transform transition duration-300 hover:scale-105"
-    >
-      <div className="p-8">
-        <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-        <div className="text-3xl font-bold text-red-600 mb-4">{plan.price}</div>
-        <p className="text-gray-600 mb-6">{plan.description}</p>
-        <button className="w-full bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition duration-300">
-          Contratar Agora
-        </button>
-      </div>
-      <div className="bg-gray-50 p-8 ">
-        <h4 className="font-semibold mb-4">O que está incluído:</h4>
-        <div className="space-y-4">
-          {plan.features.map((feature, idx) => (
-            <div key={idx} className="flex items-start">
-              <feature.icon className="h-6 w-6 text-red-600 mr-3 flex-shrink-0" />
-              <div >
-                <h5 className="font-semibold font-aller">{feature.title}</h5>
-                <p className="text-sm text-gray-600 font-aller">{feature.description}</p>
+        
+        {/* Problema que a consultoria resolve */}
+        <section id="problema" className="py-20">
+          <div className="container mx-auto px-4">
+            <h2 className="text-5xl font-bold font-aller text-center mb-12 text-white">
+              Quanto custa uma interdição total na sua empresa?
+            </h2>
+            <div className="flex md:flex-row justify-center items-center gap-x-12">
+              {/* Bloco Branco com a Lista de Problemas */}
+              <div className="bg-white rounded-lg shadow-lg p-10 flex-1 min-h-[300px] max-w-lg md:max-w-xl">
+                <ul className="space-y-6 text-gray-800 font-aller font-bold text-lg">
+                  <li className="flex items-start">
+                    <span className="text-red-600 font-bold mr-2">•</span>
+                    Empresas são multadas e até interditadas por falta de conformidade.
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-600 font-bold mr-2">•</span>
+                    Perdem contratos, oportunidades e colocam vidas em risco.
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-600 font-bold mr-2">•</span>
+                    A burocracia atrasa decisões e gera custos desnecessários.
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-600 font-bold mr-2">•</span>
+                    A prevenção é sempre mais barata do que a correção.
+                  </li>
+                </ul>
+              </div>
+              {/* Imagem */}
+              <div className="flex items-center justify-center flex-1 max-w-sm">
+                <img
+                  src={empresario} // Substitua pelo caminho correto da imagem
+                  alt="Problema que a consultoria resolve"
+                  className="rounded-lg shadow-lg h-auto"
+                />
               </div>
             </div>
-          ))}
-        </div>
-      </div>
+          </div>
+        </section>
+          
+            {/* Título acima do Plans Grid */}
+    <div className="text-center mb-8">
+      <h2 className="text-5xl font-bold font-aller text-white">
+        Planos Proprinsul
+      </h2>
+        <p className="text-lg font-aller text-white/90 mt-2">
+          Dois planos com soluções sob medida para sua empresa.
+        </p>
     </div>
-  ))}
-</div>
+    {/* Plans Grid */}
+    <div className="flex justify-center gap-8 mb-12">
+      {plans.map((plan, index) => (
+        <div
+          key={index}
+          className="bg-white rounded-lg shadow-xl overflow-hidden transform transition duration-300 hover:scale-105 w-full max-w-md"
+        >
+          <div className="p-8">
+            <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+            <div className="text-3xl font-bold text-red-600 mb-4">{plan.price}</div>
+            <p className="text-gray-600 mb-6">{plan.description}</p>
+            <button className="w-full bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition duration-300">
+              Contratar Agora
+            </button>
+          </div>
+          <div className="bg-gray-50 p-8">
+            <h4 className="font-semibold mb-4">O que está incluído:</h4>
+            <div className="space-y-4">
+              {plan.features.map((feature, idx) => (
+                <div key={idx} className="flex items-start">
+                  <feature.icon className="h-6 w-6 text-red-600 mr-3 flex-shrink-0" />
+                  <div>
+                    <h5 className="font-semibold font-aller">{feature.title}</h5>
+                    <p className="text-sm text-gray-600 font-aller">{feature.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
         {/* CTA Section */}
         <div className="bg-white rounded-lg shadow-xl p-8 text-center font-aller">
           <h2 className="text-3xl font-bold mb-4">Precisa de um Plano Personalizado?</h2>
@@ -210,27 +257,31 @@ function Plans() {
             to="https://wa.me/555332255270"
             className="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold transition duration-300"
           >
-            Fale Conosco
+            Falar pelo Whatsapp
           </Link>
         </div>
-      </div>
 
-      {/* Footer */}
-      <footer className="bg-gray-800 text-white py-8 mt-20">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center mb-4 md:mb-0">
-              <img src={Logo} className="h-8 w-8 text-red-600" />
-              <span className="ml-2 text-xl font-bold font-aller">Proprinsul</span>
+        {/* Footer */}
+        <footer className="bg-blue-950 text-white py-2 mt-20">
+            <div className="container mx-auto px-4">
+              <div className="flex flex-col md:flex-row justify-between items-center">
+                <div className="flex items-center mb-4 md:mb-0">
+                <img 
+                  src={navbarlogo} 
+                  alt="Logo Proprinsul" 
+                  className="h-24 w-auto object-contain px-2"
+                />
+                </div>
+                <div className="text-center md:text-right font-aller">
+                  <p>&copy; 2024 Proprinsul Prevenção de Incêndios. Todos os direitos reservados.</p>
+                </div>
+              </div>
             </div>
-            <div className="text-center md:text-right font-aller">
-              <p>&copy; 2024 Proprinsul Prevenção de Incêndios. Todos os direitos reservados.</p>
-            </div>
+          </footer>
           </div>
-        </div>
-      </footer>
-    </div>
-  );
+)
+
+    
 }
 
 export default Plans;

@@ -277,7 +277,7 @@ function App() {
           <Link to="/plans" className="text-white hover:text-red-600 capitalize font-aller">
             Planos
           </Link>
-          {['Serviços', 'clientes', 'Contato'].map((item) => (
+          {['Serviços', 'Clientes', 'Contato'].map((item) => (
             <button
               key={item}
               onClick={() => scrollToSection(item)}

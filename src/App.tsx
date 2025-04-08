@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
-import { FaWhatsapp } from 'react-icons/fa';
+import { FaWhatsapp, FaInstagram } from 'react-icons/fa';
 import Logo from './public/img/logo.png';
 import yaraa from './public/img/yaraa.png';
 import ccgl from './public/img/ccgl.png';
@@ -28,7 +28,7 @@ import {
   CheckCircle2,
 } 
 from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function ContactForm() {
   const [state, handleSubmit] = useForm("mblgjkjd");
@@ -90,7 +90,7 @@ function App() {
   const [activeSection, setActiveSection] = useState('home');
 
   const frases = [
-    "Contra o improviso, a gente oferece prevenção. Porque a conta da negligência sempre chega — e sai caro.",
+    "Contra o improviso, a gente oferece prevenção. Porque a conta da negligência sempre chega, e sai mais caro.",
     "Enquanto você foca no seu negócio, a gente garante sua segurança. Consultoria completa em prevenção, sem dor de cabeça.",
     "A cultura do “depois a gente resolve” custa caro. A Proprinsul existe para provar que prevenir é mais barato do que remediar.",
     "Segurança, regularidade e economia: esse é o tripé da nossa consultoria. Tornamos a prevenção acessível, eficiente e estratégica."
@@ -100,12 +100,24 @@ function App() {
   const [textoDigitado, setTextoDigitado] = useState('');
   const [indiceCaractere, setIndiceCaractere] = useState(0);
 
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const sectionId = location.hash.replace('#', '');
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
+
   useEffect(() => {
     const intervaloFrase = setInterval(() => {
       setFraseAtual((prevFrase) => (prevFrase + 1) % frases.length);
       setTextoDigitado('');
       setIndiceCaractere(0);
-    }, 7000); // Troca a frase a cada 7 segundos
+    }, 10000); // Troca a frase a cada 7 segundos
 
     return () => clearInterval(intervaloFrase);
   }, [frases.length]);
@@ -120,6 +132,15 @@ function App() {
       return () => clearTimeout(timeout);
     }
   }, [indiceCaractere, frases, fraseAtual]);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setActiveSection(sectionId);
+      setIsMenuOpen(false);
+    }
+  };
 
   const Serviços = [
     {
@@ -166,31 +187,7 @@ function App() {
                     • Sistemas de prevenção com software Zencheck para gestão de equipamentos.`,
     },
   ];
-  const planos = [
-    {
-      name: "Plano Gestão Preventiva",
-      price: "R$ 899/mês",
-      features: [
-        "Inspeção quinzenal",
-        "Manutenção preventiva e corretiva",
-        "Suporte 12x7",
-        "Relatórios detalhados",
-        "Treinamento básico"
-      ]
-    },
-    {
-      name: "Plano Proteção Total",
-      price: "Sob consulta",
-      features: [
-        "Inspeção semanal",
-        "Manutenção completa",
-        "Suporte 24x7",
-        "Relatórios personalizados",
-        "Treinamento avançado",
-        "Consultoria dedicada"
-      ]
-    }
-  ];
+ 
 
   const Clientes = [
     {
@@ -229,7 +226,7 @@ function App() {
       style: { objectFit: 'contain', objectPosition: 'center' }
     },
     {
-      name: "Bianchinni ",
+      name: "Bianchini ",
       image: bianchi,
       style: { objectFit: 'contain', objectPosition: 'center' }
     },
@@ -239,26 +236,19 @@ function App() {
       style: { objectFit: 'contain', objectPosition: 'center' }
     }
   ];
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setActiveSection(sectionId);
-      setIsMenuOpen(false);
-    }
-  };
+
 
   return (
 <div className="min-h-screen bg-[rgb(165,25,28)] font-aller">
       {/* Navigation */}
-    <nav className="fixed w-full font-aller bg-blue-950 shadow-md py-8 z-50 h-16">
+    <nav className="fixed w-full font-aller bg-blue-950 shadow-md py-12 z-50 h-16">
   <div className="container mx-auto px-4 h-full">
     <div className="flex justify-between items-center h-full">
       <div className="flex items-center h-full">
       <img 
         src={navbarlogo} 
         alt="Logo Proprinsul" 
-        className="h-24 w-auto object-contain px-2"
+        className="h-14 w-auto object-contain px-2"
       />       
         </div>
           {/* Desktop Navigation */}
@@ -353,13 +343,19 @@ function App() {
       <img
         src={Logo}
         alt="Proprinsul Logo"
-        className="h-40 w-auto mb-4 ml-28 color-[rgb(193,16,22)]"
+        className="h-40 w-auto mb-4  color-[rgb(193,16,22)]"
         style={{ alignSelf: 'flex-start' }}
       />
-      <p className="text-4xl font-aller font-semibold text-[rgb(193,16,22)] text-left max-w-lg">
-        {frases[fraseAtual]}
-      </p>
-    </div>
+<p className="text-left ml-8 max-w-lg">
+  <span className="block text-4xl font-aller font-semibold text-[rgb(193,16,22)] mb-2">
+    {frases[fraseAtual].split('.')[0]}.
+  </span>
+  <span className="block text-xl font-aller text-white">
+    {frases[fraseAtual].split('.').slice(1).join('.')}
+  </span>
+</p>
+
+  </div>
   </div>
 </section>
 
@@ -411,33 +407,32 @@ function App() {
         </section>
 
 {/* Plans Section */}
-<section id="Planos" className="py-20">
-  <div className="container mx-auto px-4">
-    <h2 className="text-4xl font-bold text-center mb-12 font-aller text-white">Nossos Planos</h2>
-    <div className="flex flex-col md:flex-row justify-center gap-8">
-      {planos.map((plan, index) => (
-        <div
-          key={index}
-          className="bg-white p-8 rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 w-full max-w-md"
-        >
-          <h3 className="text-2xl font-aller font-bold mb-4">{plan.name}</h3>
-          <div className="text-3xl font-aller font-bold text-red-600 mb-6">{plan.price}</div>
-          <ul className="space-y-3">
-            {plan.features.map((feature, idx) => (
-              <li key={idx} className="flex items-center font-aller text-gray-600">
-                <CheckCircle2 className="h-5 w-5 text-green-500 mr-2" />
-                <span>{feature}</span>
-              </li>
-            ))}
-          </ul>
-          <button className="w-full mt-8 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-aller font-semibold transition duration-300">
-            Contratar
-          </button>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
+      <section id="Planos" className="py-4">
+      <div className="container mx-auto px-4 py-12">
+                <div className="text-center mb-10 mt-14">
+                  {/* Frase Principal */}
+                  <h1 className="text-4xl md:text-5xl font-bold font-aller text-white mb-4">
+                    Sua empresa está pronta para enfrentar uma fiscalização ou emergência sem medo?
+                  </h1>
+                  {/* Subtexto */}
+                  <p className="text-lg md:text-xl font-aller text-white/90 mb-6">
+                    Mais do que alvarás e documentos, nós entregamos segurança, tranquilidade e economia para o seu negócio.
+                  </p>
+                  <p className="text-white/90 font-aller text-lg md:text-xl mb-2 text-center">
+                  Não espere o problema chegar. Antecipe-se com o plano ideal.
+                  </p>
+                  {/* Botões de CTA */}
+                  <div className="flex flex-col md:flex-row justify-center items-center gap-4">
+                    <a
+                      href="/plans"
+                      className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold font-aller transition duration-300"
+                    >
+                      Clique Aqui, Veja o plano ideal para você!
+                    </a>
+                  </div>
+                </div>
+              </div>
+      </section>
 
       {/* Partners Section */}
       <section id="Clientes" className="py-20">
@@ -445,7 +440,7 @@ function App() {
     <h2 className="text-4xl font-bold font-aller text-center mb-12 text-white">
       Nossos Parceiros
     </h2>
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       {Clientes.map((partner, index) => (
         <div
           key={index}
@@ -485,7 +480,13 @@ function App() {
                     <FaWhatsapp className="h-6 w-6 text-red-600 mr-3" />
                     <span className='font-aller'>(53) 3225-5270</span>
                   </a>
-                  </div> 
+                  </div>
+                  <div className="flex items-center">
+                  <a href="https://www.instagram.com/proprinsulextintores" className="flex items-center" target="_blank" rel="noopener noreferrer">
+                    <FaInstagram className="h-6 w-6 text-red-600 mr-3" />
+                    <span className='font-aller'>@proprinsulextintores</span>
+                  </a>
+                </div> 
                   <div className="flex items-center">                  
                   <a href="https://www.google.com/maps/search/?api=1&query=Rua+Marcelo+Gama,+90+-+Pelotas,+RS" target="_blank" rel="noopener noreferrer" className="flex items-center">
                   <MapPin className="h-6 w-6 text-red-600 mr-3" />
@@ -521,7 +522,7 @@ function App() {
         <img 
         src={navbarlogo} 
         alt="Logo Proprinsul" 
-        className="h-24 w-auto object-contain px-2"
+        className="h-14 w-auto object-contain px-2"
       />       
         </div>
         <div className="text-center md:text-right font-aller">

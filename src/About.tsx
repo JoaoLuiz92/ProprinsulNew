@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Tatiana from './public/img/TatianaFoto.jpg';
 import Simone from './public/img/Simone.jpeg';
 import Roni from './public/img/Roni.png';
 import navbarlogo from './public/img/navbarlogo.png';
+import { 
+  Menu, 
+  X,
+} from 'lucide-react';
 
 function About() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const scrollToSection = (section: string) => {
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const team = [
 
     {
@@ -28,21 +40,52 @@ function About() {
   return (
         <div className="min-h-screen bg-[rgb(165,25,28)] font-aller">
           
-        <nav className="fixed w-full bg-blue-950 bg-opacity-100 z-50 shadow-md backdrop-blur-none">
-        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <Link to="/" className="flex items-center">
-              <img 
-            src={navbarlogo} 
-            alt="Logo Proprinsul" 
-            className="h-24 w-auto object-contain px-2"
-          />       
-          </Link>
-
-           <Link to="/" className="hidden md:block text-gray-600 hover:text-red-600">
-            <span className="text-white hover:text-red-600 capitalize font-allere">Voltar</span>
-          </Link>
-        </div>
-      </nav>
+        {/* Navigation */}
+        <nav className="fixed w-full font-aller bg-blue-950 shadow-md py-12 z-50 h-16">
+          <div className="container mx-auto px-4 h-full">
+            <div className="flex justify-between items-center h-full">
+              <div className="flex items-center h-full">
+                <img 
+                  src={navbarlogo} 
+                  alt="Logo Proprinsul" 
+                  className="h-14 w-auto object-contain px-2"
+                />
+              </div>
+              {/* Desktop Navigation */}
+              <div className="hidden md:flex space-x-8">
+                      <Link
+                  to="/"
+                  className="text-white hover:text-red-600 capitalize font-aller"
+                >
+                  Início
+                </Link>
+                <Link to="/about" className="text-white hover:text-red-600 capitalize font-aller">
+                  Sobre
+                </Link>
+                <Link to="/plans" className="text-white hover:text-red-600 capitalize font-aller">
+                  Planos
+                </Link>
+                {['Serviços', 'Clientes', 'Contato'].map((item) => (
+                <Link
+                  key={item}
+                  to={`/#${item}`} 
+                  className={`text-white hover:text-red-600 capitalize font-aller`}
+                >
+                  {item}
+                </Link>
+              ))}              </div>
+              {/* Mobile menu button */}
+              <div className="md:hidden">
+                <button
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  className="text-white hover:text-red-600 font-aller"
+                >
+                  {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                </button>
+              </div>
+            </div>
+          </div>
+        </nav>
 
       <div className="container mx-auto px-4 py-20">
       <div className="relative py-16">
@@ -77,17 +120,21 @@ function About() {
   </div>
 </div>
         
-      <div className="bg-white rounded-lg shadow-xl mt-6 p-8 mb-12">
-  <h1 className="text-4xl font-aller text-center font-bold mb-8 text-gray-800">Uma história de solidez e crescimento</h1>
-      <p className="text-lg font-aller text-gray-600 mb-6">
-        A Proprinsul existe desde 1976, e desde 2011 está sob nova gestão familiar. 
-        Quando assumimos, tínhamos apenas 1 carro e 3 funcionários.
-         Hoje, somos mais de 40 colaboradores, contamos com uma frota de 10 veículos e
-          3 endereços. Seguimos crescendo com a mesma essência:
-          entregar prevenção de verdade, com responsabilidade,
-           experiência e compromisso com o cliente.
-      </p>
-    </div>
+      <div className="mt-6 px-4 mb-12">
+        <div className="max-w-5xl mx-auto ">
+          <h1 className="text-4xl font-aller font-bold mb-8 text-center text-white">
+            Uma história de solidez e crescimento
+          </h1>
+          <p className="text-lg font-aller text-white">
+            A Proprinsul existe desde 1976, e desde 2011 está sob nova gestão familiar. 
+            Quando assumimos, tínhamos apenas 1 carro e 3 funcionários.
+            Hoje, somos mais de 40 colaboradores, contamos com uma frota de 10 veículos e
+            3 endereços. Seguimos crescendo com a mesma essência:
+            entregar prevenção de verdade, com responsabilidade,
+            experiência e compromisso com o cliente.
+          </p>
+        </div>
+      </div>
 
         <h2 className="text-4xl font-bold font-aller mb-12 text-white text-center">Nossa Liderança</h2>
         <div className="grid md:grid-cols-3 gap-8">
@@ -114,7 +161,7 @@ function About() {
             <img 
             src={navbarlogo} 
             alt="Logo Proprinsul" 
-            className="h-24 w-auto object-contain px-2"
+            className="h-14 w-auto object-contain px-2"
           />       
             </div>
             <div className="text-center font-aller md:text-right">

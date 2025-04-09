@@ -92,53 +92,87 @@ function Plans() {
   ];
 
   return (
-    <div className="min-h-screen bg-[rgb(165,25,28)] font-aller">
-        {/* Navigation */}
-        <nav className="fixed w-full font-aller bg-blue-950 shadow-md py-12 z-50 h-16">
-          <div className="container mx-auto px-4 h-full">
-            <div className="flex justify-between items-center h-full">
-              <div className="flex items-center h-full">
-                <img 
-                  src={navbarlogo} 
-                  alt="Logo Proprinsul" 
-                  className="h-14 w-auto object-contain px-2"
-                />
-              </div>
-              {/* Desktop Navigation */}
-              <div className="hidden md:flex space-x-8">
-                      <Link
-                  to="/"
-                  className="text-white hover:text-red-600 capitalize font-aller"
-                >
-                  Início
-                </Link>
-                <Link to="/about" className="text-white hover:text-red-600 capitalize font-aller">
-                  Sobre
-                </Link>
-                <Link to="/plans" className="text-white hover:text-red-600 capitalize font-aller">
-                  Planos
-                </Link>
-                {['Serviços', 'Clientes', 'Contato'].map((item) => (
-                <Link
-                  key={item}
-                  to={`/#${item}`} 
-                  className={`text-white hover:text-red-600 capitalize font-aller`}
-                >
-                  {item}
-                </Link>
-              ))}              </div>
-              {/* Mobile menu button */}
-              <div className="md:hidden">
-                <button
-                  onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  className="text-white hover:text-red-600 font-aller"
-                >
-                  {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-                </button>
-              </div>
-            </div>
-          </div>
-        </nav>
+<div className="min-h-screen bg-[rgb(165,25,28)] font-aller overflow-x-hidden">
+{/* Navigation */}
+<nav className="fixed w-full font-aller bg-blue-950 shadow-md py-4 z-50">
+  <div className="container mx-auto px-4 flex justify-between items-center">
+    {/* Logo */}
+    <div className="flex items-center">
+      <img
+        src={navbarlogo}
+        alt="Logo Proprinsul"
+        className="h-12 w-auto object-contain"
+      />
+    </div>
+
+    {/* Mobile Menu Button */}
+    <div className="md:hidden">
+      <button
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        className="text-white hover:text-red-600"
+      >
+        {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+      </button>
+    </div>
+
+    {/* Desktop Navigation */}
+    <div className="hidden md:flex space-x-8">
+      <Link to="/" className="text-white hover:text-red-600 capitalize font-aller">
+        Início
+      </Link>
+      <Link to="/about" className="text-white hover:text-red-600 capitalize font-aller">
+        Sobre
+      </Link>
+      <Link to="/plans" className="text-white hover:text-red-600 capitalize font-aller">
+        Planos
+      </Link>
+      {['Serviços', 'Clientes', 'Contato'].map((item) => (
+        <Link
+          key={item}
+          to={`/#${item}`}
+          className="text-white hover:text-red-600 capitalize font-aller"
+        >
+          {item}
+        </Link>
+      ))}
+    </div>
+  </div>
+
+  {/* Mobile Navigation */}
+  {isMenuOpen && (
+    <div className="md:hidden bg-blue-950 w-full">
+      <div className="flex flex-col items-center px-4 py-2 space-y-2">
+        <Link
+          to="/"
+          className="block w-full text-left text-white hover:text-red-600 capitalize"
+        >
+          Início
+        </Link>
+        <Link
+          to="/about"
+          className="block w-full text-left text-white hover:text-red-600 capitalize"
+        >
+          Sobre
+        </Link>
+        <Link
+          to="/plans"
+          className="block w-full text-left text-white hover:text-red-600 capitalize"
+        >
+          Planos
+        </Link>
+        {['Serviços', 'Clientes', 'Contato'].map((item) => (
+          <Link
+            key={item}
+            to={`/#${item}`}
+            className="block w-full text-left text-white hover:text-red-600 capitalize"
+          >
+            {item}
+          </Link>
+        ))}
+      </div>
+    </div>
+  )}
+</nav>
 
         {/* Hero Section */}
        

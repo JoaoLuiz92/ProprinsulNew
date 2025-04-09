@@ -327,37 +327,48 @@ function App() {
     </div>
   </nav>
 
-{/* Hero Section */}
-<section id="home" className="pt-20">
-  <div className="relative h-[600px]">
-    <div className="absolute inset-0">
-      <img
-        src={fraseAtual === 0 ? heroteste : fraseAtual === 1 ? heroteste2 : fraseAtual === 2 ? heroteste3 : heroteste4}
-        alt="Hero Background"
-        className="w-full h-full object-cover"
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
-    </div>
-    <div className="relative container mx-auto px-4 h-full flex flex-col justify-center">
-      {/* Logo acima das frases, alinhado à esquerda */}
-      <img
-        src={Logo}
-        alt="Proprinsul Logo"
-        className="h-40 w-auto mb-4  color-[rgb(193,16,22)]"
-        style={{ alignSelf: 'flex-start' }}
-      />
-<p className="text-left ml-8 max-w-lg">
-  <span className="block text-4xl font-aller font-semibold text-[rgb(193,16,22)] mb-2">
-    {frases[fraseAtual].split('.')[0]}.
-  </span>
-  <span className="block text-xl font-aller text-white">
-    {frases[fraseAtual].split('.').slice(1).join('.')}
-  </span>
-</p>
-
-  </div>
-  </div>
-</section>
+    {/* Hero Section */}
+    <section id="home" className="pt-20">
+      <div className="relative h-[600px]">
+        <div className="absolute inset-0">
+          <img
+            src={fraseAtual === 0 ? heroteste : fraseAtual === 1 ? heroteste2 : fraseAtual === 2 ? heroteste3 : heroteste4}
+            alt="Hero Background"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
+        </div>
+        <div className="relative container mx-auto px-4 h-full flex flex-col justify-center">
+          {/* Logo acima das frases, alinhado à esquerda */}
+          <img
+            src={Logo}
+            alt="Proprinsul Logo"
+            className="h-40 w-auto mb-4  color-[rgb(193,16,22)]"
+            style={{ alignSelf: 'flex-start' }}
+          />
+          <p className="text-left ml-8 max-w-lg">
+            <span className="block text-4xl font-aller font-semibold text-[rgb(193,16,22)] mb-2">
+              {frases[fraseAtual].split('.')[0]}.
+            </span>
+            <span className="block text-xl font-aller text-white">
+              {frases[fraseAtual].split('.').slice(1).join('.')}
+            </span>
+          </p>
+          {/* Bolinhas de Navegação */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            {[0, 1, 2, 3].map((index) => (
+              <button
+                key={index}
+                onClick={() => setFraseAtual(index)}
+                className={`h-3 w-3 rounded-full ${
+                  fraseAtual === index ? 'bg-red-600' : 'bg-gray-400'
+                }`}
+              ></button>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
 
 {/* Services Section */}
   <section id="Serviços" className="py-20">

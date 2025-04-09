@@ -9,10 +9,10 @@ import josapar from './public/img/josapar.png';
 import lifemed from './public/img/lifemed.png';
 import unifertil from './public/img/unifertil.png';
 import audioteste from './public/audio/audioteste.mp3';
-import heroteste from './public/img/heroteste.jpg';
-import heroteste2 from './public/img/aboutpicture.jpg';
-import heroteste3 from './public/img/bgservices.jpeg';
-import heroteste4 from './public/img/bkg.jpg';
+import heroteste from './public/img/heroteste.jpeg';
+import heroteste2 from './public/img/heroteste2.jpeg';
+import heroteste3 from './public/img/heroteste3.jpeg';
+import heroteste4 from './public/img/heroteste4.jpeg';
 import navbarlogo from './public/img/navbarlogo.png';
 import tanac from './public/img/tanac.png';
 import bianchi from './public/img/bianchi.png';
@@ -117,7 +117,7 @@ function App() {
       setFraseAtual((prevFrase) => (prevFrase + 1) % frases.length);
       setTextoDigitado('');
       setIndiceCaractere(0);
-    }, 10000); // Troca a frase a cada 7 segundos
+    }, 7000); // Troca a frase a cada 7 segundos
 
     return () => clearInterval(intervaloFrase);
   }, [frases.length]);

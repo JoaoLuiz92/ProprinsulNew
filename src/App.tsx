@@ -452,12 +452,12 @@ function App() {
                   </p>
                   {/* Botões de CTA */}
                   <div className="flex flex-col md:flex-row justify-center items-center gap-4">
-                    <a
-                      href="/plans"
+                    <Link
+                      to="/plans"
                       className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold font-aller transition duration-300"
                     >
                       Clique Aqui, Veja o plano ideal para você!
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

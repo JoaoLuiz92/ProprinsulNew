@@ -8,7 +8,7 @@ import bunge from './public/img/bunge.png';
 import josapar from './public/img/josapar.png';
 import lifemed from './public/img/lifemed.png';
 import unifertil from './public/img/unifertil.png';
-import audioteste from './public/audio/audioteste.mp3';
+import audioteste from './public/audio/Manifesto.mp3';
 import heroteste from './public/img/heroteste.jpeg';
 import heroteste2 from './public/img/heroteste2.jpeg';
 import heroteste3 from './public/img/heroteste3.jpeg';
@@ -17,6 +17,9 @@ import navbarlogo from './public/img/navbarlogo.png';
 import tanac from './public/img/tanac.png';
 import bianchi from './public/img/bianchi.png';
 import saobento from './public/img/saobento.png';
+import sbs from './public/img/sbs.jpg';
+import allesblau from './public/img/allesblau.png';
+import vbs from './public/img/VBS.png';
 
 
 
@@ -234,7 +237,22 @@ function App() {
       name: "Tanac",
       image: tanac,
       style: { objectFit: 'contain', objectPosition: 'center' }
-    }
+    },
+    {
+      name: "VibraSom ",
+      image: vbs,
+      style: { objectFit: 'contain', objectPosition: 'center' }
+    },
+    {
+      name: "Alles Blau - Hotel & Restaurante ",
+      image: allesblau,
+      style: { objectFit: 'contain', objectPosition: 'center' }
+    },
+    {
+      name: "SBS Engenharia ",
+      image: sbs,
+      style: { objectFit: 'contain', objectPosition: 'center' }
+    },
   ];
 
 

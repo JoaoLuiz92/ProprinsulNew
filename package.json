@@ -10,7 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^16.0.1",
+    "@contentful/rich-text-types": "^17.0.0",
     "@formspree/react": "^2.5.4",
+    "contentful": "^11.5.23",
+    "dotenv": "^16.5.0",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

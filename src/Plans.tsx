@@ -10,7 +10,13 @@ import {
   Headphones,
   FileText,
   Users,
-  Briefcase
+  Briefcase,
+  FileCheck,
+  GraduationCap,
+  FileSignature,
+  ClipboardList,
+  BadgeCheck,
+  Percent
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -21,72 +27,104 @@ function Plans() {
   const plans = [
 
     {
-      name: "Plano Gestão Preventiva",
-      price: "R$ 899/mês",
+      name: "Plano Essencial",
+      price: "R$ 219,00/mês",
       description: "Perfeito para empresas de médio porte que necessitam de cobertura mais abrangente",
       features: [
         {
-          icon: Shield,
-          title: "Inspeção quinzenal",
-          description: "Verificações mais frequentes para maior segurança"
+          icon: FileCheck,
+          title: "Monitoramento de documentação regulatória PREFEITURA, AMBIENTAL E BOMBEIROS.",
+          description: ""
         },
         {
-          icon: Clock,
-          title: "Manutenção preventiva e corretiva",
-          description: "Cobertura completa de manutenção"
+          icon: GraduationCap,
+          title: "Treinamento de uso dos equipamentos de prevenção e combate a incêndio",
+          description: ""
         },
         {
-          icon: Headphones,
-          title: "Suporte 12x7",
-          description: "Suporte técnico estendido"
+          icon: FileSignature,
+          title: "Renovação de alvará dos bombeiros",
+          description: ""
         },
         {
-          icon: FileText,
-          title: "Relatórios detalhados",
-          description: "Análises completas e recomendações"
+          icon: ClipboardList,
+          title: "Relatório de conformidade anual para seguradoras, auditorias e vistorias.",
+          description: ""
         },
         {
-          icon: Users,
-          title: "Treinamento básico",
-          description: "Capacitação da equipe para emergências"
+          icon: BadgeCheck,
+          title: "Garantia 100% contra multas",
+          description: ""
+        },
+        {
+          icon: Percent,
+          title: "Desconto de 15% em serviços",
+          description: ""
+        }
+      ]
+    },
+        {
+      name: "Plano Padrão",
+      price: "R$ 299,00/mês",
+      description: "",
+      features: [
+        {
+          icon: FileCheck,
+          title: "Tudo o que está no PLANO ESSENCIAL mais:",
+          description: ""
+        },
+        {
+          icon: FileSignature,
+          title: "Relatórios semestrais",
+          description: ""
+        },
+        {
+          icon: ClipboardList,
+          title: "Responsável técnico pelo estabelecimento",
+          description: ""
+        },
+        {
+          icon: BadgeCheck,
+          title: "Renovação de alvará VISA",
+          description: ""
+        },
+        {
+          icon: Percent,
+          title: "Desconto de 30% em serviços",
+          description: ""
         }
       ]
     },
     {
       name: "Plano Proteção Total",
-      price: "Sob consulta",
+      price: "R$ 599,00/mês",
       description: "Solução completa para grandes empresas com necessidades específicas de segurança",
       features: [
         {
-          icon: Shield,
-          title: "Inspeção semanal",
-          description: "Monitoramento constante dos sistemas"
+          icon: FileCheck,
+          title: "Tudo o que está no PLANO PADRÃO mais:",
+          description: ""
         },
         {
-          icon: Clock,
-          title: "Manutenção completa",
-          description: "Cobertura total de todos os equipamentos"
+          icon: FileSignature,
+          title: "Relatórios trimestrais",
+          description: ""
         },
         {
-          icon: Headphones,
-          title: "Suporte 24x7",
-          description: "Assistência técnica disponível 24 horas"
+          icon: ClipboardList,
+          title: "Fiscalização e controle de obras relacionadas aos bombeiros",
+          description: ""
         },
         {
           icon: FileText,
-          title: "Relatórios personalizados",
-          description: "Documentação adaptada às suas necessidades"
+          title: "PAE (Plano de Atendimento e Emergência) sempre atualizado",
+          description: ""
         },
         {
-          icon: Users,
-          title: "Treinamento avançado",
-          description: "Programa completo de capacitação"
+          icon: Percent,
+          title: "Desconto de 50% em serviços",
+          description: ""
         },
-        {
-          icon: Briefcase,
-          title: "Consultoria dedicada",
-          description: "Assessoria especializada permanente"
-        }
       ]
     }
   ];

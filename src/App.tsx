@@ -21,8 +21,6 @@ import sbs from './public/img/sbs.jpg';
 import allesblau from './public/img/allesblau.png';
 import vbs from './public/img/VBS.png';
 
-
-
 import {  
   Mail, 
   MapPin, 
@@ -293,8 +291,11 @@ function App() {
       <Link to="/about" className="text-white hover:text-red-600 capitalize">
         Sobre
       </Link>
-      <Link to="/plans" className="text-white hover:text-red-600 capitalize">
+       <Link to="/plans" className="text-white hover:text-red-600 capitalize">
         Planos
+      </Link>
+             <Link to="/blog" className="text-white hover:text-red-600 capitalize">
+        Blog
       </Link>
       {['Serviços', 'Clientes', 'Contato'].map((item) => (
         <button

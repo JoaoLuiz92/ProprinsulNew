@@ -6,6 +6,7 @@ import About from './About.tsx';
 import './index.css';
 import Plans from './Plans.tsx';
 
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Router>

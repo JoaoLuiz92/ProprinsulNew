@@ -157,7 +157,7 @@ function Plans() {
           
         </Link>
       ))}
-        <Link to="/blog" className="text-white hover:text-red-600 capitalize">
+        <Link to="/blog" className="text-white hover:text-red-600 capitalize font-aller">
                Zona Segura
         </Link>
     </div>
@@ -199,7 +199,7 @@ function Plans() {
           </Link>
           
         ))}
-                <Link to="/blog" className="text-white hover:text-red-600 capitalize">
+                <Link to="/blog" className="block w-full text-left text-white hover:text-red-600 capitalize">
                Zona Segura
         </Link>
       </div>

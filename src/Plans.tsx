@@ -29,37 +29,30 @@ function Plans() {
     {
       name: "Plano Essencial",
       price: "R$ 219,00/mês",
-      description: "Perfeito para empresas de médio porte que necessitam de cobertura mais abrangente",
       features: [
         {
           icon: FileCheck,
           title: "Monitoramento de documentação regulatória PREFEITURA, AMBIENTAL E BOMBEIROS.",
-          description: ""
         },
         {
           icon: GraduationCap,
           title: "Treinamento de uso dos equipamentos de prevenção e combate a incêndio",
-          description: ""
         },
         {
           icon: FileSignature,
           title: "Renovação de alvará dos bombeiros",
-          description: ""
         },
         {
           icon: ClipboardList,
           title: "Relatório de conformidade anual para seguradoras, auditorias e vistorias.",
-          description: ""
         },
         {
           icon: BadgeCheck,
           title: "Garantia 100% contra multas",
-          description: ""
         },
         {
           icon: Percent,
           title: "Desconto de 15% em serviços",
-          description: ""
         }
       ]
     },
@@ -71,59 +64,48 @@ function Plans() {
         {
           icon: FileCheck,
           title: "Tudo o que está no PLANO ESSENCIAL mais:",
-          description: ""
         },
         {
           icon: FileSignature,
           title: "Relatórios semestrais",
-          description: ""
         },
         {
           icon: ClipboardList,
           title: "Responsável técnico pelo estabelecimento",
-          description: ""
         },
         {
           icon: BadgeCheck,
           title: "Renovação de alvará VISA",
-          description: ""
         },
         {
           icon: Percent,
           title: "Desconto de 30% em serviços",
-          description: ""
         }
       ]
     },
     {
       name: "Plano Proteção Total",
       price: "R$ 599,00/mês",
-      description: "Solução completa para grandes empresas com necessidades específicas de segurança",
       features: [
         {
           icon: FileCheck,
           title: "Tudo o que está no PLANO PADRÃO mais:",
-          description: ""
         },
         {
           icon: FileSignature,
           title: "Relatórios trimestrais",
-          description: ""
         },
         {
           icon: ClipboardList,
           title: "Fiscalização e controle de obras relacionadas aos bombeiros",
-          description: ""
         },
         {
           icon: FileText,
           title: "PAE (Plano de Atendimento e Emergência) sempre atualizado",
-          description: ""
         },
         {
           icon: Percent,
           title: "Desconto de 50% em serviços",
-          description: ""
         },
       ]
     }
@@ -274,8 +256,10 @@ function Plans() {
             <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
             <div className="text-3xl font-bold text-red-600 mb-4">{plan.price}</div>
             <p className="text-gray-600 mb-6">{plan.description}</p>
-            <button className="w-full bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition duration-300">
+            <button className="w-full bg-red-600 hover:bg-red-700 text-white px-6 py-3 mt-8 rounded-lg font-semibold transition duration-300">
+              <a href="https://wa.me/555332255270" target="_blank" rel="noopener noreferrer">
               Contratar Agora
+              </a>
             </button>
           </div>
           <div className="bg-gray-50 p-8">
@@ -286,7 +270,6 @@ function Plans() {
                   <feature.icon className="h-6 w-6 text-red-600 mr-3 flex-shrink-0" />
                   <div>
                     <h5 className="font-semibold font-aller">{feature.title}</h5>
-                    <p className="text-sm text-gray-600 font-aller">{feature.description}</p>
                   </div>
                 </div>
               ))}
@@ -303,13 +286,11 @@ function Plans() {
             Entre em contato conosco para desenvolvermos uma solução sob medida para sua empresa
           </p>
                  <a
-                href="#Whtasapp Automação"
+                href="https://wa.me/555332255270"
                 className="bg-red-600 m-8 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold font-aller transition duration-300"
               >
                 Quero Regularizar Minha Empresa
               </a>
-
-     
         </div>
 
         {/* Footer */}

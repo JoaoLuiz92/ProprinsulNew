@@ -492,6 +492,20 @@ function App() {
     </div>
   </div>
 </section>
+
+        <div className="bg-white rounded-lg shadow-xl p-8 text-center font-aller">
+          <h2 className="text-3xl font-bold mb-4">Zona Segura </h2>
+          <p className="text-gray-600 mb-6">
+            Veja aqui dicas, informações, noticias e muito mais sobre segurança e prevenção de incêndios. 
+          </p>
+                 <a
+                href="https://wa.me/555332255270"
+                className="bg-red-600 m-8 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold font-aller transition duration-300"
+              >
+                Clique aqui para acessar a Zona Segura
+              </a>
+        </div>
+
       
           {/* Contact Section */}
           <section id="Contato" className="py-20">

@@ -146,6 +146,7 @@ function Plans() {
       <Link to="/plans" className="text-white hover:text-red-600 capitalize font-aller">
         Planos
       </Link>
+
       {['Serviços', 'Clientes', 'Contato'].map((item) => (
         <Link
           key={item}
@@ -153,8 +154,12 @@ function Plans() {
           className="text-white hover:text-red-600 capitalize font-aller"
         >
           {item}
+          
         </Link>
       ))}
+        <Link to="/blog" className="text-white hover:text-red-600 capitalize">
+               Zona Segura
+        </Link>
     </div>
   </div>
 
@@ -180,6 +185,9 @@ function Plans() {
         >
           Planos
         </Link>
+         <Link to="/blog" className="text-white hover:text-red-600 capitalize">
+               Blog
+        </Link>
         {['Serviços', 'Clientes', 'Contato'].map((item) => (
           <Link
             key={item}
@@ -187,8 +195,13 @@ function Plans() {
             className="block w-full text-left text-white hover:text-red-600 capitalize"
           >
             {item}
+
           </Link>
+          
         ))}
+                <Link to="/blog" className="text-white hover:text-red-600 capitalize">
+               Zona Segura
+        </Link>
       </div>
     </div>
   )}

@@ -78,6 +78,9 @@ function About() {
                 {item}
               </Link>
             ))}
+            <Link to="/blog" className="text-white hover:text-red-600 capitalize">
+                       Zona Segura
+             </Link>
           </div>
         </div>
 
@@ -112,6 +115,9 @@ function About() {
                   {item}
                 </Link>
               ))}
+                      <Link to="/blog" className="text-white hover:text-red-600 capitalize">
+                             Zona Segura
+                      </Link>
             </div>
           </div>
         )}

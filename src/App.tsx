@@ -294,9 +294,6 @@ function App() {
        <Link to="/plans" className="text-white hover:text-red-600 capitalize">
         Planos
       </Link>
-             <Link to="/blog" className="text-white hover:text-red-600 capitalize">
-        Blog
-      </Link>
       {['Serviços', 'Clientes', 'Contato'].map((item) => (
         <button
           key={item}
@@ -308,6 +305,9 @@ function App() {
           {item}
         </button>
       ))}
+     <Link to="/blog" className="text-white hover:text-red-600 capitalize">
+           Zona Segura
+      </Link>
     </div>
   </div>
 
@@ -342,6 +342,9 @@ function App() {
             {item}
           </button>
         ))}
+                <Link to="/blog" className="text-white hover:text-red-600 capitalize">
+                       Zona Segura
+                </Link>
       </div>
     </div>
   )}

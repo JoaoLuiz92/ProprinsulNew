@@ -5,12 +5,7 @@ import navbarlogo from './public/img/navbarlogo.png';
 import { 
   Menu, 
   X,
-  Shield,
-  Clock,
-  Headphones,
   FileText,
-  Users,
-  Briefcase,
   FileCheck,
   GraduationCap,
   FileSignature,
@@ -157,9 +152,14 @@ function Plans() {
           
         </Link>
       ))}
-        <Link to="/blog" className="text-white hover:text-red-600 capitalize font-aller">
-               Zona Segura
-        </Link>
+            <Link
+              to="https://proprinsul.webnode.page/"
+              className="text-white hover:text-red-600 capitalize font-aller"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Zona Segura
+            </Link>
     </div>
   </div>
 
@@ -199,9 +199,14 @@ function Plans() {
           </Link>
           
         ))}
-                <Link to="/blog" className="block w-full text-left text-white hover:text-red-600 capitalize">
-               Zona Segura
-        </Link>
+            <Link
+              to="https://proprinsul.webnode.page/"
+              className="text-white hover:text-red-600 capitalize font-aller"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Zona Segura
+            </Link>
       </div>
     </div>
   )}

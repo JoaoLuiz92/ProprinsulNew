@@ -305,9 +305,14 @@ function App() {
           {item}
         </button>
       ))}
-     <Link to="/blog" className="text-white hover:text-red-600 capitalize font-aller">
-           Zona Segura
-      </Link>
+            <Link
+              to="https://proprinsul.webnode.page/"
+              className="text-white hover:text-red-600 capitalize font-aller"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Zona Segura
+            </Link>
     </div>
   </div>
 
@@ -342,9 +347,14 @@ function App() {
             {item}
           </button>
         ))}
-                <Link to="/blog" className="block w-full text-left text-white hover:text-red-600 capitalize">
-                       Zona Segura
-                </Link>
+            <Link
+              to="https://proprinsul.webnode.page/"
+              className="text-white hover:text-red-600 capitalize font-aller"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Zona Segura
+            </Link>
       </div>
     </div>
   )}
@@ -502,7 +512,9 @@ function App() {
             Veja aqui dicas, informações, noticias e muito mais sobre segurança e prevenção de incêndios. 
           </p>
                  <a
-                href=""
+                href="https://proprinsul.webnode.page/"
+                target='_blank'
+                rel="noopener noreferrer"
                 className="bg-red-600 m-8 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold font-aller transition duration-300"
               >
                 Clique aqui para acessar a Zona Segura

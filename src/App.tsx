@@ -509,7 +509,7 @@ function App() {
         <div className="bg-white rounded-lg shadow-xl p-8 text-center font-aller">
           <h2 className="text-3xl font-bold mb-4">Zona Segura </h2>
           <p className="text-gray-600 mb-6">
-            Veja aqui dicas, informações, noticias e muito mais sobre segurança e prevenção de incêndios. 
+            Veja aqui dicas, informações, notícias e muito mais sobre segurança e prevenção de incêndios. 
           </p>
                  <a
                 href="https://proprinsul.webnode.page/"

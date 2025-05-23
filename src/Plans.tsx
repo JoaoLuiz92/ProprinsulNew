@@ -218,7 +218,7 @@ function Plans() {
         <section id="problema" className="py-20">
           <div className="container mx-auto px- mt-10">
             <h2 className="text-5xl font-bold font-aller text-center mb-12 text-white">
-              Quanto custa uma interdição total na sua empresa?
+              Quanto custa uma interdição na sua empresa?
             </h2>
             <div className="flex md:flex-row justify-center items-center gap-x-12">
               {/* Bloco Branco com a Lista de Problemas */}
@@ -260,7 +260,7 @@ function Plans() {
         Planos Proprinsul
       </h2>
         <p className="text-lg font-aller text-white/90 mt-2">
-          Dois planos com soluções sob medida para sua empresa.
+          Três planos com soluções sob medida para sua empresa.
         </p>
     </div>
     {/* Plans Grid */}

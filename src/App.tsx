@@ -547,7 +547,7 @@ function App() {
                   </a>
                 </div> 
                   <div className="flex items-center">                  
-                  <a href="https://www.google.com/maps/search/?api=1&query=Rua+Marcelo+Gama,+90+-+Pelotas,+RS" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                  <a href="https://www.google.com/maps/search/?api=1&query=Rua+Sen.+Salgado+Filho,+1597+-+Pelotas,+RS" target="_blank" rel="noopener noreferrer" className="flex items-center">
                   <MapPin className="h-6 w-6 text-red-600 mr-3" />
                   <span className='font-aller'>Av. Salgado Filho, 1597A - Pelotas, RS</span>
                   </a>

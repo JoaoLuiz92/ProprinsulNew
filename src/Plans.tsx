@@ -185,8 +185,11 @@ function Plans() {
         >
           Planos
         </Link>
-         <Link to="/blog" className="text-white hover:text-red-600 capitalize">
-               Blog
+        <Link
+          to="/blog"
+          className="block w-full text-left text-white hover:text-red-600 capitalize"
+        >
+          Blog
         </Link>
         {['Serviços', 'Clientes', 'Contato'].map((item) => (
           <Link
@@ -201,7 +204,7 @@ function Plans() {
         ))}
             <Link
               to="https://proprinsul.webnode.page/"
-              className="text-white hover:text-red-600 capitalize font-aller"
+              className="block w-full text-left text-white hover:text-red-600 capitalize"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -220,7 +223,7 @@ function Plans() {
             <h2 className="text-5xl font-bold font-aller text-center mb-12 text-white">
               Quanto custa uma interdição na sua empresa?
             </h2>
-            <div className="flex md:flex-row justify-center items-center gap-x-12">
+              <div className="flex flex-col md:flex-row justify-center items-center gap-12 px-4">
               {/* Bloco Branco com a Lista de Problemas */}
               <div className="bg-white rounded-lg shadow-lg p-10 flex-1 min-h-[300px] max-w-lg md:max-w-xl">
                 <ul className="space-y-6 text-gray-800 font-aller font-bold text-lg">
@@ -264,8 +267,8 @@ function Plans() {
         </p>
     </div>
     {/* Plans Grid */}
-    <div className="flex justify-center gap-8 mb-12">
-      {plans.map((plan, index) => (
+      <div className="flex flex-wrap justify-center gap-8 mb-12 px-4">
+        {plans.map((plan, index) => (
         <div
           key={index}
           className="bg-white rounded-lg shadow-xl overflow-hidden transform transition duration-300 hover:scale-105 w-full max-w-md"
@@ -307,7 +310,7 @@ function Plans() {
                 href="https://wa.me/555332255270"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-red-600 m-8 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold font-aller transition duration-300"
+                className="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold font-aller transition duration-300"
               >
                 Quero Regularizar Minha Empresa
               </a>

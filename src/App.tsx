@@ -515,7 +515,7 @@ function App() {
                 href="https://proprinsul.webnode.page/"
                 target='_blank'
                 rel="noopener noreferrer"
-                className="bg-red-600 m-8 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold font-aller transition duration-300"
+                className="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold font-aller transition duration-300"
               >
                 Clique aqui para acessar a Zona Segura
               </a>

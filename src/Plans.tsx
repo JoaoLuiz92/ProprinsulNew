@@ -24,6 +24,8 @@ function Plans() {
     {
       name: "Plano Essencial",
       price: "R$ 219,00/mês",
+      ctaMessage: "Olá! Eu gostaria de assinar o plano proteção essencial.",
+
       features: [
         {
           icon: FileCheck,
@@ -54,7 +56,7 @@ function Plans() {
         {
       name: "Plano Padrão",
       price: "R$ 299,00/mês",
-      description: "",
+      ctaMessage: "Olá! Eu gostaria de assinar o plano padrão.",
       features: [
         {
           icon: FileCheck,
@@ -81,6 +83,8 @@ function Plans() {
     {
       name: "Plano Proteção Total",
       price: "R$ 599,00/mês",
+      ctaMessage: "Olá! Eu gostaria de assinar o plano proteção total.",
+      description:"",
       features: [
         {
           icon: FileCheck,
@@ -278,7 +282,10 @@ function Plans() {
             <div className="text-3xl font-bold text-red-600 mb-4">{plan.price}</div>
             <p className="text-gray-600 mb-6">{plan.description}</p>
             <button className="w-full bg-red-600 hover:bg-red-700 text-white px-6 py-3 mt-8 rounded-lg font-semibold transition duration-300">
-              <a href="https://wa.me/555332255270" target="_blank" rel="noopener noreferrer">
+              <a 
+               href={`https://wa.me/555332255270?text=${encodeURIComponent(plan.ctaMessage)}`}
+               target="_blank"
+                rel="noopener noreferrer">
               Contratar Agora
               </a>
             </button>

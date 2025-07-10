@@ -62,7 +62,7 @@ function Plans() {
       features: [
         {
           icon: BadgeCheck,
-          title: "Tudo o que está no PLANO ESSENCIAL mais:",
+          title: "Tudo do plano essencial.",
         },
         {
           icon: FileSignature,

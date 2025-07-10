@@ -11,7 +11,9 @@ import {
   FileSignature,
   ClipboardList,
   BadgeCheck,
-  Percent
+  Percent,
+  PenLine,
+  ShieldCheck
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -29,28 +31,28 @@ function Plans() {
       features: [
         {
           icon: FileCheck,
-          title: "Monitoramento de documentação regulatória PREFEITURA, AMBIENTAL E BOMBEIROS.",
+          title: "Monitoramento regulatório completo (Prefeitura, VISA, Bombeiros).",
         },
         {
           icon: GraduationCap,
-          title: "Treinamento de uso dos equipamentos de prevenção e combate a incêndio",
+          title: "Renovação de alvará dos bombeiros (Risco Baixo).",
         },
         {
           icon: FileSignature,
-          title: "Renovação de alvará dos bombeiros",
+          title: "Relatório de conformidade anual.",
         },
         {
           icon: ClipboardList,
-          title: "Relatório de conformidade anual para seguradoras, auditorias e vistorias.",
-        },
-        {
-          icon: BadgeCheck,
-          title: "Garantia 100% contra multas",
+          title: "Treinamento de equipe 1x ao ano.",
         },
         {
           icon: Percent,
+          title: "Desconto de 15% em serviços contratados",
+        },
+       /* {
+          icon: Percent,
           title: "Desconto de 15% em serviços",
-        }
+        }*/
       ]
     },
         {
@@ -59,7 +61,7 @@ function Plans() {
       ctaMessage: "Olá! Eu gostaria de assinar o plano padrão.",
       features: [
         {
-          icon: FileCheck,
+          icon: BadgeCheck,
           title: "Tudo o que está no PLANO ESSENCIAL mais:",
         },
         {
@@ -67,17 +69,30 @@ function Plans() {
           title: "Relatórios semestrais",
         },
         {
-          icon: ClipboardList,
-          title: "Responsável técnico pelo estabelecimento",
+          icon: GraduationCap,
+          title: "Treinamento de equipe a cada 6 meses.",
         },
         {
-          icon: BadgeCheck,
-          title: "Renovação de alvará VISA",
+          icon:  FileText,
+          title: "Responsável técnico incluso.",
+        },
+        {
+          icon: ShieldCheck,
+          title: "Renovação de alvará VISA.",
+        },
+        {
+          icon: ClipboardList,
+          title: "ART de execução inclusa",
+        },
+        {
+          icon: PenLine,
+          title: "Declarações técnicas e alterações cadastrais inclusas.",
         },
         {
           icon: Percent,
-          title: "Desconto de 30% em serviços",
+          title: "Desconto de 30% em serviços.",
         }
+
       ]
     },
     {
@@ -87,25 +102,37 @@ function Plans() {
       description:"",
       features: [
         {
-          icon: FileCheck,
-          title: "Tudo o que está no PLANO PADRÃO mais:",
+          icon: BadgeCheck,
+          title: "Tudo do plano Padrão.",
         },
         {
           icon: FileSignature,
-          title: "Relatórios trimestrais",
+          title: "Relatórios trimestrais.",
         },
         {
-          icon: ClipboardList,
-          title: "Fiscalização e controle de obras relacionadas aos bombeiros",
+          icon: GraduationCap,
+          title: "Treinamento de equipe trimestralmente.",
         },
         {
           icon: FileText,
-          title: "PAE (Plano de Atendimento e Emergência) sempre atualizado",
+          title: "PAE sempre atualizado.",
+        },
+        {
+          icon: ShieldCheck,
+          title: "Fiscalização e controle de obras.",
+        },
+        {
+          icon: ClipboardList,
+          title: "Acompanhamento de execução de PPCI incluso.",
+        },
+        {
+          icon: PenLine,
+          title: "ART de execução inclusa",
         },
         {
           icon: Percent,
-          title: "Desconto de 50% em serviços",
-        },
+          title: "Desconto de 50% em serviços.",
+        }
       ]
     }
   ];

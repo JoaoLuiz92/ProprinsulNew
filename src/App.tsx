@@ -27,6 +27,7 @@ import {
   Menu, 
   X,
   CheckCircle2,
+  Bold,
 } 
 from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
@@ -438,8 +439,7 @@ function App() {
             <div className="flex flex-col items-center text-center">
               {/* Texto em Destaque */}
               <p className="text-xl font-aller text-white italic max-w-3xl mb-8">
-          “Acreditamos que prevenção não é custo, é investimento. Lutar contra a cultura do ‘depois a gente resolve’ é o que move nosso trabalho todos os dias. Nossa missão é tornar a prevenção acessível, eficiente e sem dor de cabeça.”
-              </p>
+                “Lutamos contra a cultura do ‘depois a gente resolve’. Prevenção não é custo, é o investimento mais inteligente que uma empresa pode fazer. <br />Nossa missão é tornar a prevenção acessível, eficiente e sem dor de cabeça.” </p>
               {/* Player de Áudio */}
               <audio controls className="w-full max-w-md">
           <source src={audioteste} type="audio/mpeg" />

@@ -129,6 +129,7 @@ function Docs() {
                 className="block w-full text-left text-white hover:text-red-600 capitalize"
               >
                 Planos
+                
               </Link>
               {['Serviços', 'Clientes', 'Contato'].map((item) => (
                 <Link

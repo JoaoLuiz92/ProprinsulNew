@@ -78,6 +78,9 @@ function About() {
                 {item}
               </Link>
             ))}
+            <Link to="/docs" className="text-white hover:text-red-600 capitalize font-aller">
+              Certificações
+            </Link>
             <Link
               to="https://proprinsul.webnode.page/"
               className="text-white hover:text-red-600 capitalize font-aller"
@@ -120,6 +123,12 @@ function About() {
                   {item}
                 </Link>
               ))}
+              <Link
+                to="/docs"
+                className="block w-full text-left text-white hover:text-red-600 capitalize"
+              >
+                Certificações
+              </Link>
             <Link
               to="https://proprinsul.webnode.page/"
               className="text-white hover:text-red-600 capitalize font-aller"

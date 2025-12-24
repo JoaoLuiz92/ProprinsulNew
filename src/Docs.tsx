@@ -12,7 +12,7 @@ import {
 import { Link } from 'react-router-dom';
 
 // Importar os documentos
-import doc1 from './public/docs/NFSe nº 1 - IM nº1053539 (1).pdf';
+import doc1 from './public/docs/CERTIDÃO CREA PROPRINSUL VALID. 31-03-26 (1).pdf';
 import doc2 from './public/docs/Registro 007775_2013 _ Avaliação da Conformidade.pdf';
 
 function Docs() {
@@ -21,11 +21,11 @@ function Docs() {
   const documents = [
     {
       id: 1,
-      title: "NFSe nº 1 - IM nº1053539",
-      description: "Nota Fiscal de Serviço Eletrônica - Documento oficial de prestação de serviços.",
+      title: "Certidão CREA Proprinsul",
+      description: "Certidão de registro no CREA válida até 31/03/2026.",
       icon: FileText,
       file: doc1,
-      category: "Notas Fiscais"
+      category: "Certificações"
     },
     {
       id: 2,

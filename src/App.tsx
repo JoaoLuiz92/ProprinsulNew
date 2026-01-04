@@ -30,7 +30,15 @@ import {
   Bold,
 } 
 from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+
+// Declaração de tipo para Google Analytics
+declare global {
+  interface Window {
+    dataLayer: any[];
+    gtag: (...args: any[]) => void;
+  }
+}
 
 function ContactForm() {
   const [state, handleSubmit] = useForm("mblgjkjd");
@@ -94,7 +102,7 @@ function App() {
   const frases = [
     "Contra o improviso, a gente oferece prevenção. Porque a conta da negligência sempre chega, e sai mais caro.",
     "Enquanto você foca no seu negócio, a gente garante sua segurança. Consultoria completa em prevenção, sem dor de cabeça.",
-    "A cultura do “depois a gente resolve” custa caro. A Proprinsul existe para provar que prevenir é mais barato do que remediar.",
+    "A cultura do \"depois a gente resolve\" custa caro. A Proprinsul existe para provar que prevenir é mais barato do que remediar.",
     "Segurança, regularidade e economia: esse é o tripé da nossa consultoria. Tornamos a prevenção acessível, eficiente e estratégica."
   ];
 
@@ -103,6 +111,7 @@ function App() {
   const [indiceCaractere, setIndiceCaractere] = useState(0);
 
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (location.hash) {
@@ -138,9 +147,46 @@ function App() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
+      // Atualizar a URL com o hash
+      if (location.pathname === '/') {
+        // Se está na página inicial, atualiza apenas o hash
+        window.location.hash = sectionId;
+      } else {
+        // Se está em outra página, navega para a página inicial com o hash
+        navigate(`/#${sectionId}`);
+        // Aguardar para garantir que a navegação aconteceu
+        setTimeout(() => {
+          const targetElement = document.getElementById(sectionId);
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+        setActiveSection(sectionId);
+        setIsMenuOpen(false);
+        
+        // Rastrear clique no botão Contato
+        if (sectionId === 'Contato' && window.gtag) {
+          window.gtag('event', 'click', {
+            'event_category': 'Navigation',
+            'event_label': 'Contato Button',
+            'value': 1
+          });
+        }
+        return;
+      }
+      
       element.scrollIntoView({ behavior: 'smooth' });
       setActiveSection(sectionId);
       setIsMenuOpen(false);
+      
+      // Rastrear clique no botão Contato
+      if (sectionId === 'Contato' && window.gtag) {
+        window.gtag('event', 'click', {
+          'event_category': 'Navigation',
+          'event_label': 'Contato Button',
+          'value': 1
+        });
+      }
     }
   };
 

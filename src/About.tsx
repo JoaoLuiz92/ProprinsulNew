@@ -6,8 +6,26 @@ import Roni from './public/img/Roni.png';
 import navbarlogo from './public/img/navbarlogo.png';
 import { Menu, X } from 'lucide-react';
 
+// Declaração de tipo para Google Analytics
+declare global {
+  interface Window {
+    dataLayer: any[];
+    gtag: (...args: any[]) => void;
+  }
+}
+
 function About() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleContactClick = () => {
+    if (window.gtag) {
+      window.gtag('event', 'click', {
+        'event_category': 'Navigation',
+        'event_label': 'Contato Button',
+        'value': 1
+      });
+    }
+  };
 
   const scrollToSection = (section: string) => {
     const element = document.getElementById(section);
@@ -74,6 +92,7 @@ function About() {
                 key={item}
                 to={`/#${item}`}
                 className="text-white hover:text-red-600 capitalize font-aller"
+                onClick={item === 'Contato' ? handleContactClick : undefined}
               >
                 {item}
               </Link>
@@ -119,6 +138,7 @@ function About() {
                   key={item}
                   to={`/#${item}`}
                   className="block w-full text-left text-white hover:text-red-600 capitalize"
+                  onClick={item === 'Contato' ? handleContactClick : undefined}
                 >
                   {item}
                 </Link>

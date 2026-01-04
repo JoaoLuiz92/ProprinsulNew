@@ -17,9 +17,27 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+// Declaração de tipo para Google Analytics
+declare global {
+  interface Window {
+    dataLayer: any[];
+    gtag: (...args: any[]) => void;
+  }
+}
+
 function Plans() {
 
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
+  const handleContactClick = () => {
+    if (window.gtag) {
+      window.gtag('event', 'click', {
+        'event_category': 'Navigation',
+        'event_label': 'Contato Button',
+        'value': 1
+      });
+    }
+  };
 
   const plans = [
 
@@ -178,6 +196,7 @@ function Plans() {
           key={item}
           to={`/#${item}`}
           className="text-white hover:text-red-600 capitalize font-aller"
+          onClick={item === 'Contato' ? handleContactClick : undefined}
         >
           {item}
           
@@ -224,6 +243,7 @@ function Plans() {
             key={item}
             to={`/#${item}`}
             className="block w-full text-left text-white hover:text-red-600 capitalize"
+            onClick={item === 'Contato' ? handleContactClick : undefined}
           >
             {item}
 

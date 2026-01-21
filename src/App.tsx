@@ -20,6 +20,7 @@ import saobento from './public/img/saobento.png';
 import sbs from './public/img/sbs.jpg';
 import allesblau from './public/img/allesblau.png';
 import vbs from './public/img/VBS.png';
+import embaixador from './public/img/embaixador.png'; 
 
 import {  
   Mail, 
@@ -251,6 +252,11 @@ function App() {
     {
       name: "CCGL",
       image: ccgl,
+      style: { objectFit: 'contain', objectPosition: 'center' }
+    },
+    {
+      name: "Embaixador",
+      image: embaixador,
       style: { objectFit: 'contain', objectPosition: 'center' }
     },
     {
